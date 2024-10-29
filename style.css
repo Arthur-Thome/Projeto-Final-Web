@@ -1,0 +1,273 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Suporte para rolagem suave */
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+}
+
+/* .logo img {
+    height: 50px;  Ajuste a altura conforme necessário 
+} */
+
+.navbar {
+    display: flex;
+}
+
+.navbar-nav {
+    list-style-type: none;
+    display: flex;
+}
+
+.navbar-nav li {
+    margin: 0 15px;
+}
+
+.navbar-nav a {
+    color: white;
+    text-decoration: none;
+}
+
+
+/* Estilos do Menu Hambúrguer */
+.menu-toggle {
+    display: none; /* Oculta por padrão */
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    height: 3px;
+    width: 25px;
+    background-color: white;
+    margin: 3px 0;
+}
+
+.banner {
+    /* background-image: url('./images/banner.png');
+    background-repeat: no-repeat;
+    background-size: cover; */
+    background-color: #555;
+    height: 300px; /* Ajuste a altura conforme necessário */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 2em;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+section {
+    padding: 20px;
+}
+
+/* section {
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin: 20px 0;
+}
+
+#registerSection, #loginSection {
+    display: block; /* Mostra a seção de registro inicialmente (ou escolha uma)
+} */
+
+
+.title{
+    text-align: center;
+}
+
+.gallery-container {
+    display: flex;
+    justify-content: space-evenly;
+    grid: 10px;
+    flex-wrap: wrap;
+}
+
+.gallery-item {
+    width: 20%; /* Ajuste a largura conforme necessário */
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    text-align: center;
+    background-color: #f8f8f8;
+}
+
+.gallery-item img {
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+}
+
+.photo-info {
+    padding: 10px;
+}
+
+.photo-info p {
+    margin: 5px 0;
+    font-size: 0.9em;
+    color: #333;
+}
+
+.photo-info strong {
+    color: #555;
+}
+
+
+
+/* Formulário do contato */
+
+#contact {
+    padding: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+
+
+/* Media Query para Tablets (768px a 1024px) */
+@media (max-width: 1024px) {
+    section {
+        padding: 40px 0;
+    }
+
+    .gallery img {
+        width: 150px; /* Reduz o tamanho das imagens na galeria */
+    }
+
+    .navbar.active {
+        display: flex; /* Mostra o menu */
+    }
+
+    .navbar {
+        display: none; /* Oculta o menu padrão */
+        width: 100%; /* Para ocupar toda a largura */
+        background-color: #333;
+        position: absolute;
+        top: 60px; /* Ajuste conforme necessário */
+        left: 0;
+    }
+
+    .navbar-nav {
+        flex-direction: column; /* Muda a direção para coluna */
+        align-items: center; /* Centraliza os itens */
+    }
+
+    .navbar-nav li {
+        margin: 10px 0; /* Margem vertical entre os itens */
+    }
+
+    .menu-toggle {
+        display: flex; /* Exibe o menu hambúrguer em telas menores */
+    }
+}
+
+
+
+/* Media Query para Dispositivos Móveis (até 767px) */
+@media (max-width: 768px) {
+    body {
+        padding: 0 10px; /* Adiciona espaçamento nas laterais */
+    }
+
+    section {
+        padding: 30px 0; /* Reduz o padding das seções */
+    }
+
+    .navbar-nav {
+        flex-direction: column; /* Itens do menu em coluna */
+    }
+
+    .gallery {
+        justify-content: center; /* Centraliza a galeria */
+    }
+
+    .gallery-item {
+        width: 45%; /* Aumenta o tamanho em telas menores */
+        margin: 10px 0;
+    }
+
+    .gallery img {
+        width: 100px; /* Reduz o tamanho das imagens na galeria */
+        margin: 5px; /* Ajusta a margem das imagens */
+    }
+
+    form {
+        margin-top: 20px; /* Adiciona margem ao formulário */
+    }
+
+        /* Menu Hamburguer */
+
+    .navbar.active {
+        display: flex; /* Mostra o menu */
+    }
+
+    .navbar {
+        display: none; /* Oculta o menu padrão */
+        width: 100%; /* Para ocupar toda a largura */
+        background-color: #333;
+        position: absolute;
+        top: 60px; /* Ajuste conforme necessário */
+        left: 0;
+    }
+
+    .navbar-nav {
+        flex-direction: column; /* Muda a direção para coluna */
+        align-items: center; /* Centraliza os itens */
+    }
+
+    .navbar-nav li {
+        margin: 10px 0; /* Margem vertical entre os itens */
+    }
+
+    .menu-toggle {
+        display: flex; /* Exibe o menu hambúrguer em telas menores */
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-item {
+        width: 100%; /* Cada item ocupa a largura total em telas pequenas */
+    }
+}
