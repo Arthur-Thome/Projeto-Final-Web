@@ -7,15 +7,18 @@ const { Pool } = require('pg');
 require('dotenv').config(); // Importando o dotenv
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = 3000;
+
+// Gera uma string aleatória segura para o secret
+const sessionSecret = 'h7X3lpQp9Jr6V9X4bT8Kx2GzY6Mf5Pj9'
 
 // Configuração do banco de dados PostgreSQL usando variáveis de ambiente
 const pool = new Pool({
-    user: process.env.DB_USER,
-    host: process.env.DB_HOST,
-    database: process.env.DB_DATABASE,
-    password: process.env.DB_PASSWORD,
-    port: process.env.DB_PORT,
+    user: 'postgres',
+    host: 'localhost',               
+    database: 'login',      
+    password: 'postgres',
+    port: 5434
 });
 
 // Configuração do Nodemailer usando variáveis de ambiente
@@ -31,9 +34,10 @@ const transporter = nodemailer.createTransport({
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public')); // Pasta para arquivos estáticos
 app.use(session({
-    secret: process.env.SESSION_SECRET,
+    secret: sessionSecret,       // Usa a string gerada aleatoriamente
     resave: false,
     saveUninitialized: true,
+    cookie: { secure: false }    // Em produção, defina como true se estiver usando HTTPS
 }));
 
 // Rotas
@@ -93,3 +97,26 @@ app.post('/logout', (req, res) => {
 app.listen(PORT, () => {
     console.log(`Servidor rodando na porta ${PORT}`);
 });
+
+
+// CREATE TABLE users (
+//     id SERIAL PRIMARY KEY,
+//     username VARCHAR(50) UNIQUE NOT NULL,
+//     email VARCHAR(100) UNIQUE NOT NULL,
+//     password VARCHAR(255) NOT NULL,
+//     reset_token VARCHAR(255), -- Token usado para redefinir a senha
+//     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+// );
+
+// CREATE TABLE messages (
+//     id SERIAL PRIMARY KEY,
+//     name VARCHAR(100) NOT NULL,
+//     email VARCHAR(100) NOT NULL,
+//     subject VARCHAR(150),
+//     message TEXT NOT NULL,
+//     sent_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+// );
+
+// select * from users
+
+// select * from messages

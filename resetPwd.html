@@ -30,9 +30,9 @@
         </nav>
     </header>
 
-    <section id="resetPasswordForm" style="display: none;">
+    <section id="resetPasswordForm">
         <h2>Redefinir Senha</h2>
-        <form id="resetPassword">
+        <form id="resetPassword" action="http://localhost:3000/reset-password" method="POST">
             <input type="email" name="email" placeholder="Seu Email" required>
             <button type="submit">Enviar Email de Redefinição</button>
         </form>
