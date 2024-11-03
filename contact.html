@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./images/favicon.png" type="image/png">
     <title>Venda de computadores</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -25,18 +26,23 @@
                 <li><a href="./contact.html">Contato</a></li>
                 <li id="register-link"><a href="./signup.html">Cadastrar</a></li>
                 <li id="login-link"><a href="./signin.html">Login</a></li>
-                <li id="logout-link" style="display: none;"><a href="#" onclick="logout()">Logout</a></li> <!-- Botão de Logout -->
+                <li id="logout-link" style="display: none;"><a href="#" onclick="logout()">Logout</a></li> Botão de Logout
             </ul>
         </nav>
     </header>
-    <section id="contact">
+
+    <section id="contactForm">
         <h2>Contato</h2>
-        <form id="contactForm" action="http://localhost:3000/contact" method="POST">
+        <form id="contact" action="http://localhost:3000/contact" method="POST">
+            <p class="inputCon">Nome:</p>
             <input type="text" name="name" placeholder="Seu Nome" required>
+            <p class="inputCon">E-mail:</p>
             <input type="email" name="email" placeholder="Seu Email" required>
+            <p class="inputCon">Assunto:</p>
             <input type="text" name="subject" placeholder="Assunto" required>
+            <p class="inputCon">Mensagem:</p>
             <textarea name="message" placeholder="Sua Mensagem" required></textarea>
-            <button type="submit">Enviar</button>
+            <button class="BtnContact" type="submit">Enviar</button>
         </form>
     </section>
 

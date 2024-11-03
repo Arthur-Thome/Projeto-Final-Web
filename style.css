@@ -126,44 +126,217 @@ section {
     color: #555;
 }
 
+/* Formulário do Login */
 
-
-/* Formulário do contato */
-
-#contact {
-    padding: 20px;
+#loginForm {
+    width: 40%;
+    text-align: center;
+    border-radius: 5%;
+    border-style: groove;
+    border-color: black;
+    margin: 5px auto;
 }
 
-.form-group {
+#login input{
+    display: flex;
+    margin: 5px auto;
+    flex-wrap: wrap;
+    align-items: center;
+    height: 50px;
+    width: 500px;
+}
+
+#loginForm {
     margin-bottom: 15px;
 }
 
-.form-group label {
+#loginForm label {
     display: block;
     margin-bottom: 5px;
 }
 
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+.inputLogin{
+    text-align: left;
 }
 
-button {
-    background-color: #333;
-    color: white;
+.RedCad{
+    text-align: center;
+    padding: 20px;
+}
+
+#loginForm input{
+    display: flex;
+    margin: 5px auto;
+    flex-wrap: wrap;
+    align-items: center;
+    height: 50px;
+    width: 500px;
+}
+
+.BtnLogin {
+    background-color: orange;
+    color: black;
     border: none;
     padding: 10px 15px;
     border-radius: 5px;
     cursor: pointer;
 }
 
-button:hover {
-    background-color: #555;
+.BtnLogin:hover {
+    background-color: #cd7c0b;
 }
 
+/* Formulário de resetar a senha */
+
+#resetPasswordForm {
+    width: 40%;
+    text-align: center;
+    border-radius: 5%;
+    border-style: groove;
+    border-color: black;
+    margin: 5px auto;
+}
+
+#resetPassword input{
+    display: flex;
+    margin: 5px auto;
+    flex-wrap: wrap;
+    align-items: center;
+    height: 50px;
+    width: 500px;
+}
+
+#resetPasswordForm {
+    margin-bottom: 15px;
+}
+
+#resetPasswordForm label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.inputResetPwd{
+    text-align: left;
+}
+
+#resetPasswordForm input{
+    display: flex;
+    margin: 5px auto;
+    flex-wrap: wrap;
+    align-items: center;
+    height: 50px;
+    width: 500px;
+}
+
+.BtnResetPwd {
+    background-color: orange;
+    color: black;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.BtnResetPwd:hover {
+    background-color: #cd7c0b;
+}
+
+
+/* Formulário do contato */
+
+#contactForm {
+    width: 40%;
+    text-align: center;
+    border-radius: 5%;
+    border-style: groove;
+    border-color: black;
+    margin: 5px auto;
+}
+
+#contact input{
+    display: flex;
+    margin: 5px auto;
+    flex-wrap: wrap;
+    align-items: center;
+    height: 50px;
+    width: 500px;
+}
+
+#contactForm {
+    margin-bottom: 15px;
+}
+
+#contactForm label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.inputCon{
+    text-align: left;
+}
+
+#contactForm input,
+#contactForm textarea {
+    display: flex;
+    margin: 5px auto;
+    flex-wrap: wrap;
+    align-items: center;
+    height: 50px;
+    width: 500px;
+}
+
+.BtnContact {
+    background-color: orange;
+    color: black;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.BtnContact:hover {
+    background-color: #cd7c0b;
+}
+
+
+/* Formulário para Cadastro */
+
+#registerForm{
+    width: 40%;
+    text-align: center;
+    border-radius: 5%;
+    border-style: groove;
+    border-color: black;
+    margin: 5px auto;
+    /* margin-top: 10%; */
+}
+
+#register input{
+    display: flex;
+    margin: 5px auto;
+    flex-wrap: wrap;
+    align-items: center;
+    height: 50px;
+    width: 500px;
+}
+
+.inputReg{
+    text-align: left;
+}
+
+.RedLogin{
+    text-align: center;
+    padding: 20px;
+}
+
+.BtnRegister{
+    background-color: orange;
+    color: black;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
 
 
 /* Media Query para Tablets (768px a 1024px) */

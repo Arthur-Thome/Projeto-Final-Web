@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./images/favicon.png" type="image/png">
     <title>Venda de computadores</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -33,8 +34,9 @@
     <section id="resetPasswordForm">
         <h2>Redefinir Senha</h2>
         <form id="resetPassword" action="http://localhost:3000/reset-password" method="POST">
+            <p class="inputResetPwd">E-mail:</p>
             <input type="email" name="email" placeholder="Seu Email" required>
-            <button type="submit">Enviar Email de Redefinição</button>
+            <button class="BtnResetPwd" type="submit">Enviar Email de Redefinição</button>
         </form>
     </section>
 
