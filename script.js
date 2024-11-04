@@ -6,6 +6,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const registerForm = document.getElementById('registerForm');
     const resetPasswordForm = document.getElementById('resetPasswordForm');
     const contactForm = document.getElementById('contactForm');
+    const mobileMenu = document.getElementById("mobile-menu");
+    const navbar = document.getElementById("navbar");
+
+    mobileMenu.addEventListener("click", () => {
+        navbar.classList.toggle("active");
+    });
 
     // Mostrar/ocultar formulários
     loginBtn.addEventListener('click', () => {
@@ -92,3 +98,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+
+// Alterna a exibição do menu de navegação em dispositivos móveis
+// function toggleMenu() {
+//     const navbar = document.getElementById('navbar');
+//     navbar.classList.toggle('show');
+// }
+
+// Adiciona o evento de clique ao ícone de hambúrguer

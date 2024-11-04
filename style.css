@@ -55,6 +55,7 @@ body {
     width: 25px;
     background-color: white;
     margin: 3px 0;
+    transition: all 0.3s ease;
 }
 
 .banner {
@@ -75,15 +76,15 @@ section {
     padding: 20px;
 }
 
-/* section {
+ section {
     padding: 20px;
     border: 1px solid #ccc;
     margin: 20px 0;
 }
 
 #registerSection, #loginSection {
-    display: block; /* Mostra a seção de registro inicialmente (ou escolha uma)
-} */
+    display: block; /* Mostra a seção de registro inicialmente (ou escolha uma)*/
+}
 
 
 .title{
@@ -143,7 +144,7 @@ section {
     flex-wrap: wrap;
     align-items: center;
     height: 50px;
-    width: 500px;
+    width: 100%;
 }
 
 #loginForm {
@@ -156,21 +157,13 @@ section {
 }
 
 .inputLogin{
+    margin-left: 5%;
     text-align: left;
 }
 
 .RedCad{
     text-align: center;
     padding: 20px;
-}
-
-#loginForm input{
-    display: flex;
-    margin: 5px auto;
-    flex-wrap: wrap;
-    align-items: center;
-    height: 50px;
-    width: 500px;
 }
 
 .BtnLogin {
@@ -203,7 +196,7 @@ section {
     flex-wrap: wrap;
     align-items: center;
     height: 50px;
-    width: 500px;
+    width: 90%;
 }
 
 #resetPasswordForm {
@@ -216,16 +209,8 @@ section {
 }
 
 .inputResetPwd{
+    margin-left: 5%;
     text-align: left;
-}
-
-#resetPasswordForm input{
-    display: flex;
-    margin: 5px auto;
-    flex-wrap: wrap;
-    align-items: center;
-    height: 50px;
-    width: 500px;
 }
 
 .BtnResetPwd {
@@ -253,25 +238,12 @@ section {
     margin: 5px auto;
 }
 
-#contact input{
-    display: flex;
-    margin: 5px auto;
-    flex-wrap: wrap;
-    align-items: center;
-    height: 50px;
-    width: 500px;
-}
-
 #contactForm {
     margin-bottom: 15px;
 }
 
-#contactForm label {
-    display: block;
-    margin-bottom: 5px;
-}
-
 .inputCon{
+    margin-left: 5%;
     text-align: left;
 }
 
@@ -282,7 +254,7 @@ section {
     flex-wrap: wrap;
     align-items: center;
     height: 50px;
-    width: 500px;
+    width: 90%;
 }
 
 .BtnContact {
@@ -317,10 +289,11 @@ section {
     flex-wrap: wrap;
     align-items: center;
     height: 50px;
-    width: 500px;
+    width: 90%;
 }
 
 .inputReg{
+    margin-left: 5%;
     text-align: left;
 }
 
@@ -442,5 +415,9 @@ section {
 @media (max-width: 480px) {
     .gallery-item {
         width: 100%; /* Cada item ocupa a largura total em telas pequenas */
+    }
+
+    .navbar.active {
+        display: flex; /* Mostra o menu */
     }
 }

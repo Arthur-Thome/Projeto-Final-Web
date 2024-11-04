@@ -1,94 +1,146 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const session = require('express-session');
 const { Pool } = require('pg');
-require('dotenv').config(); // Importando o dotenv
+const { google } = require('googleapis');
 
 const app = express();
 const PORT = 3000;
 
 // Gera uma string aleatória segura para o secret
-const sessionSecret = 'h7X3lpQp9Jr6V9X4bT8Kx2GzY6Mf5Pj9'
+const sessionSecret = 'h7X3lpQp9Jr6V9X4bT8Kx2GzY6Mf5Pj9';
 
 // Configuração do banco de dados PostgreSQL usando variáveis de ambiente
 const pool = new Pool({
     user: 'postgres',
-    host: 'localhost',               
-    database: 'login',      
+    host: 'localhost',
+    database: 'login',
     password: 'postgres',
     port: 5434
 });
 
-// Configuração do Nodemailer usando variáveis de ambiente
-const transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-    },
-});
+// Configurações do OAuth 2.0 para Nodemailer
+const CLIENT_ID = '854154501431-hke1qnlmvtr26u0kqfcldfkubpp4n1c6.apps.googleusercontent.com';
+const CLIENT_SECRET = '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';
+const REDIRECT_URI = 'https://developers.google.com/oauthplayground';
+const REFRESH_TOKEN = 'SEU_REFRESH_TOKEN'; // Insira seu token de atualização aqui
 
-// Middleware
+const oAuth2Client = new google.auth.OAuth2(CLIENT_ID, CLIENT_SECRET, REDIRECT_URI);
+oAuth2Client.setCredentials({ refresh_token: REFRESH_TOKEN });
+
+// Middlewares
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static('public')); // Pasta para arquivos estáticos
 app.use(session({
-    secret: sessionSecret,       // Usa a string gerada aleatoriamente
+    secret: sessionSecret,
     resave: false,
     saveUninitialized: true,
-    cookie: { secure: false }    // Em produção, defina como true se estiver usando HTTPS
+    cookie: { secure: false } // Em produção, defina como true se estiver usando HTTPS
 }));
 
-// Rotas
-
+// Rota de Login
 app.post('/login', async (req, res) => {
     const { email, password } = req.body;
-    const result = await pool.query('SELECT * FROM users WHERE email = $1', [email]);
-    const user = result.rows[0];
-
-    if (user && await bcrypt.compare(password, user.password)) {
-        req.session.userId = user.id;
-        res.json({ success: true });
-    } else {
-        res.json({ success: false, message: 'Email ou senha incorretos.' });
+    try{
+        const result = await pool.query('SELECT * FROM users WHERE email = $1', [email]);
+        if (result.rows.length === 0 || !bcrypt.compareSync(password, result.rows[0].password)) {
+            return res.status(400).send("Credenciais inválidas");
     }
+    req.session.user = result.rows[0];
+    res.send("Login bem-sucedido");
+} catch (err) {
+    return res.status(500).send("Erro no login: " + err.message);
+}
 });
 
+// Rota de Cadastro
 app.post('/register', async (req, res) => {
     const { username, email, password } = req.body;
-    const hashedPassword = await bcrypt.hash(password, 10);
-    await pool.query('INSERT INTO users (username, email, password) VALUES ($1, $2, $3)', [username, email, hashedPassword]);
-    res.json({ success: true, message: 'Cadastro realizado com sucesso!' });
+    const hashedPassword = await bcrypt.hashSync(password, 8);
+    try{
+        await pool.query('INSERT INTO users (username, email, password) VALUES ($1, $2, $3)', [username, email, hashedPassword]);
+        res.redirect('/login');    
+    } catch (err) {
+        return res.status(400).send("Erro no cadastro: " + err.message);
+    }
+
 });
 
+// Rota de Resetar a Senha
 app.post('/reset-password', async (req, res) => {
-    const { email } = req.body;
-    const result = await pool.query('SELECT * FROM users WHERE email = $1', [email]);
-    const user = result.rows[0];
+    const { email, newPassword } = req.body; // Captura a nova senha
+    try {
+        const result = await pool.query('SELECT * FROM users WHERE email = $1', [email]);
+        if (result.rows.length === 0) return res.status(400).send("Email não encontrado");
 
-    if (user) {
-        const token = Math.random().toString(36).substr(2); // Geração simples de token
-        await pool.query('UPDATE users SET reset_token = $1 WHERE email = $2', [token, email]);
+        const hashedPassword = bcrypt.hashSync(newPassword, 8);
+        await pool.query('UPDATE users SET password = $1 WHERE email = $2', [hashedPassword, email]);
+
+        const accessToken = await oAuth2Client.getAccessToken();
+
+        const transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+                type: 'OAuth2',
+                user: 'seuemail@gmail.com',
+                clientId: CLIENT_ID,
+                clientSecret: CLIENT_SECRET,
+                refreshToken: REFRESH_TOKEN,
+                accessToken: accessToken.token,
+            },
+        });
 
         const mailOptions = {
-            from: process.env.EMAIL_USER,
+            from: 'seuemail@gmail.com',
             to: email,
-            subject: 'Redefinição de Senha',
-            text: `Clique no link para redefinir sua senha: http://localhost:3000/reset-password?token=${token}`,
+            subject: 'Reset de Senha',
+            text: `Sua senha foi alterada com sucesso! Sua nova senha é: ${newPassword}`,
         };
 
-        transporter.sendMail(mailOptions, (error, info) => {
-            if (error) {
-                return res.json({ success: false, message: 'Erro ao enviar email.' });
-            }
-            res.json({ success: true, message: 'Email de redefinição enviado!' });
-        });
-    } else {
-        res.json({ success: false, message: 'Email não encontrado.' });
+        await transporter.sendMail(mailOptions);
+        res.send("Email enviado com a nova senha");
+    } catch (err) {
+        return res.status(500).send("Erro ao resetar a senha: " + err.message);
     }
 });
 
+// Rota de Contato
+app.post('/contact', async (req, res) => {
+    const { name, email, message } = req.body;
+    try {
+        await pool.query('INSERT INTO contacts (name, email, message) VALUES ($1, $2, $3)', [name, email, message]);
+        
+        const accessToken = await oAuth2Client.getAccessToken();
+        const transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+                type: 'OAuth2',
+                user: 'seuemail@gmail.com',
+                clientId: CLIENT_ID,
+                clientSecret: CLIENT_SECRET,
+                refreshToken: REFRESH_TOKEN,
+                accessToken: accessToken.token,
+            },
+        });
+
+        const mailOptions = {
+            from: 'seuemail@gmail.com',
+            to: ['arthurthome7@gmail.com', 'arthurthome21@gmail.com'],
+            subject: 'Nova mensagem de contato',
+            text: `Nome: ${name}\nEmail: ${email}\nMensagem: ${message}`,
+        };
+
+        await transporter.sendMail(mailOptions);
+        res.send("Mensagem enviada com sucesso");
+    } catch (err) {
+        return res.status(500).send("Erro ao enviar a mensagem: " + err.message);
+    }
+});
+
+
+// logout
 app.post('/logout', (req, res) => {
     req.session.destroy();
     res.json({ success: true });
@@ -99,22 +151,25 @@ app.listen(PORT, () => {
 });
 
 
+
+
+// Id do cliente: 854154501431-hke1qnlmvtr26u0kqfcldfkubpp4n1c6.apps.googleusercontent.com
+// Chave secreta: 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
+
+
+
 // CREATE TABLE users (
 //     id SERIAL PRIMARY KEY,
-//     username VARCHAR(50) UNIQUE NOT NULL,
-//     email VARCHAR(100) UNIQUE NOT NULL,
-//     password VARCHAR(255) NOT NULL,
-//     reset_token VARCHAR(255), -- Token usado para redefinir a senha
-//     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+//     name VARCHAR(100),
+//     email VARCHAR(100) UNIQUE,
+//     password VARCHAR(255)
 // );
 
-// CREATE TABLE messages (
+// CREATE TABLE contacts (
 //     id SERIAL PRIMARY KEY,
-//     name VARCHAR(100) NOT NULL,
-//     email VARCHAR(100) NOT NULL,
-//     subject VARCHAR(150),
-//     message TEXT NOT NULL,
-//     sent_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+//     name VARCHAR(100),
+//     email VARCHAR(100),
+//     message TEXT
 // );
 
 // select * from users
