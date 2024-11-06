@@ -17,8 +17,8 @@ const pool = new Pool({
     user: 'postgres',
     host: 'localhost',
     database: 'login',
-    password: 'postgres',
-    port: 5434
+    password: '123456',
+    port: 5433
 });
 
 // Configurações do OAuth 2.0 para Nodemailer
@@ -61,7 +61,7 @@ app.post('/register', async (req, res) => {
     const hashedPassword = await bcrypt.hashSync(password, 8);
     try{
         await pool.query('INSERT INTO users (username, email, password) VALUES ($1, $2, $3)', [username, email, hashedPassword]);
-        res.redirect('/login');    
+        res.redirect('http://127.0.0.1:5501/signin.html');    
     } catch (err) {
         return res.status(400).send("Erro no cadastro: " + err.message);
     }
@@ -84,7 +84,7 @@ app.post('/reset-password', async (req, res) => {
             service: 'gmail',
             auth: {
                 type: 'OAuth2',
-                user: 'seuemail@gmail.com',
+                user: 'arthurthome7@gmail.com',
                 clientId: CLIENT_ID,
                 clientSecret: CLIENT_SECRET,
                 refreshToken: REFRESH_TOKEN,
@@ -93,7 +93,7 @@ app.post('/reset-password', async (req, res) => {
         });
 
         const mailOptions = {
-            from: 'seuemail@gmail.com',
+            from: 'arthurthome7@gmail.com',
             to: email,
             subject: 'Reset de Senha',
             text: `Sua senha foi alterada com sucesso! Sua nova senha é: ${newPassword}`,
@@ -117,7 +117,7 @@ app.post('/contact', async (req, res) => {
             service: 'gmail',
             auth: {
                 type: 'OAuth2',
-                user: 'seuemail@gmail.com',
+                user: 'arthurthome7@gmail.com',
                 clientId: CLIENT_ID,
                 clientSecret: CLIENT_SECRET,
                 refreshToken: REFRESH_TOKEN,
@@ -126,7 +126,7 @@ app.post('/contact', async (req, res) => {
         });
 
         const mailOptions = {
-            from: 'seuemail@gmail.com',
+            from: 'arthurthome7@gmail.com',
             to: ['arthurthome7@gmail.com', 'arthurthome21@gmail.com'],
             subject: 'Nova mensagem de contato',
             text: `Nome: ${name}\nEmail: ${email}\nMensagem: ${message}`,
@@ -157,6 +157,9 @@ app.listen(PORT, () => {
 // Chave secreta: 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
 
 
+//
+
+
 
 // CREATE TABLE users (
 //     id SERIAL PRIMARY KEY,
@@ -174,4 +177,4 @@ app.listen(PORT, () => {
 
 // select * from users
 
-// select * from messages
+// select * from contact
