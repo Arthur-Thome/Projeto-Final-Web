@@ -345,6 +345,60 @@ section {
     max-width: 80%;
 }
 
+/* Carrossel de Promoções */
+.carousel-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.carousel {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    position: relative;
+}
+
+.carousel-item {
+    min-width: 100%;
+    transition: transform 0.5s ease;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.carousel-item p {
+    margin-top: 8px;
+    font-size: 16px;
+    color: #333;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.carousel-button.prev {
+    left: 10px;
+}
+
+.carousel-button.next {
+    right: 10px;
+}
+
 /* Media Query para Tablets (768px a 1024px) */
 @media (max-width: 1024px) {
     section {
@@ -379,6 +433,21 @@ section {
 
     .menu-toggle {
         display: flex; /* Exibe o menu hambúrguer em telas menores */
+    }
+
+    /* Carrossel */
+
+    .carousel {
+        max-width: 700px;
+    }
+
+    .carousel-item p {
+        font-size: 14px; /* Ajustado para 14px */
+    }
+
+    .carousel-button {
+        padding: 8px 12px;
+        font-size: 14px; /* Ajustado para 14px */
     }
 }
 
@@ -443,6 +512,25 @@ section {
     .menu-toggle {
         display: flex; /* Exibe o menu hambúrguer em telas menores */
     }
+
+    /* Carrossel */
+
+    .carousel {
+        max-width: 600px;
+    }
+
+    .carousel-container h2 {
+        font-size: 26px; /* Ajustado para 26px */
+    }
+
+    .carousel-item p {
+        font-size: 13px; /* Ajustado para 13px */
+    }
+
+    .carousel-button {
+        padding: 7px 10px;
+        font-size: 13px; /* Ajustado para 13px */
+    }
 }
 
 @media (max-width: 480px) {
@@ -452,5 +540,33 @@ section {
 
     .navbar.active {
         display: flex; /* Mostra o menu */
+    }
+
+    /* Carrossel */
+
+    .carousel {
+        max-width: 100%;
+    }
+
+    .carousel-container h2 {
+        font-size: 24px;
+    }
+
+    .carousel-item p {
+        font-size: 12px;
+    }
+
+    .carousel-button {
+        padding: 5px 8px;
+        font-size: 12px; 
+    }
+
+    /* Ajustando o botão para caber melhor em telas menores */
+    .carousel-button.prev {
+        left: 5px;
+    }
+
+    .carousel-button.next {
+        right: 5px;
     }
 }

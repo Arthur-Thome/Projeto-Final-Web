@@ -128,6 +128,48 @@ document.getElementById('popup').addEventListener('click', function (event) {
     }
 });
 
+// Carrossel
+document.addEventListener('DOMContentLoaded', () => {
+    const carousel = document.querySelector('.carousel');
+    const items = document.querySelectorAll('.carousel-item');
+    const prevButton = document.querySelector('.carousel-button.prev');
+    const nextButton = document.querySelector('.carousel-button.next');
+    let currentIndex = 0;
+
+    function showItem(index) {
+        carousel.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    nextButton.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % items.length;
+        showItem(currentIndex);
+    });
+
+    prevButton.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + items.length) % items.length;
+        showItem(currentIndex);
+    });
+});
+
+let currentIndex = 0;
+
+function moveCarousel(direction) {
+    const items = document.querySelectorAll('.carousel-item');
+    currentIndex += direction;
+
+    // Loop para o próximo item após o último e volta ao primeiro
+    if (currentIndex >= items.length) {
+        currentIndex = 0;
+    } else if (currentIndex < 0) {
+        currentIndex = items.length - 1;
+    }
+
+    const offset = -currentIndex * 100; // Calcula a posição baseada na largura do item
+    items.forEach(item => {
+        item.style.transform = `translateX(${offset}%)`;
+    });
+}
+
 
 // Alterna a exibição do menu de navegação em dispositivos móveis
 // function toggleMenu() {
