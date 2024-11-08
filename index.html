@@ -1,12 +1,23 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./images/favicon.png" type="image/png">
-    <title>TS Computech</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>TS Computech</title>
+    
+        <!-- jQuery deve vir primeiro -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        
+        <!-- Slick CSS -->
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+        
+        <!-- Slick JS (depois do jQuery) -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" href="./images/favicon.png" type="image/png">    
+    </head>
 <body>
 
 <header class="header">
@@ -38,24 +49,43 @@
 
 <!-- Carrossel de Promoções -->
 <section>
-    <div class="carousel-container">
-        <h2>Promoções de Computadores</h2>
-        <div class="carousel">
-            <div class="carousel-item">
-                <img src="./images/promo1.png" alt="Promoção 1">
-                <p>Desconto especial em PC Gamer - R$ 7.500,00</p>
+    <div class="carrossel">
+        <a href="./promotions.html">
+            <div>
+                <img src="images/promo1.png" alt="Promoção 1">
+                <div class="promo-description">
+                    <div class="promo-title">Desconto de até 20% em PCs Gamer!</div>
+                    <div class="promo-price">De R$ 5.000,00 por R$ 4.000,00</div>
+                </div>
             </div>
-            <div class="carousel-item">
-                <img src="./images/promo2.png" alt="Promoção 2">
-                <p>Notebook para programadores - R$ 4.200,00</p>
+        </a>
+        <a href="./promotions.html">
+            <div>
+                <img src="images/promo1.png" alt="Promoção 2">
+                <div class="promo-description">
+                    <div class="promo-title">Promoção de Placa de Vídeo</div>
+                    <div class="promo-price">De R$ 2.000,00 por R$ 1.800,00</div>
+                </div>
             </div>
-            <div class="carousel-item">
-                <img src="./images/promo3.png" alt="Promoção 3">
-                <p>Monitor ultrawide 4K - R$ 2.300,00</p>
+        </a>
+        <a href="./promotions.html">
+            <div>
+                <img src="images/promo1.png" alt="Promoção 3">
+                <div class="promo-description">
+                    <div class="promo-title">Desconto de 15% em Kits de Upgrade</div>
+                    <div class="promo-price">De R$ 1.500,00 por R$ 1.275,00</div>
+                </div>
             </div>
-        </div>
-        <button class="carousel-button prev" onclick="moveCarousel(-1)">❮</button>
-        <button class="carousel-button next" onclick="moveCarousel(1)">❯</button>
+        </a>
+        <a href="./promotions.html">
+            <div>
+                <img src="images/promo1.png" alt="Promoção 4">
+                <div class="promo-description">
+                    <div class="promo-title">Monitor Gamer 144Hz com 10% OFF</div>
+                    <div class="promo-price">De R$ 1.200,00 por R$ 1.080,00</div>
+                </div>
+            </div>
+        </a>
     </div>
 </section>
 
@@ -107,6 +137,25 @@
         </div>
     </div>
 </section>
+
+<script>
+// Carrossel
+$(document).ready(function(){
+    if (typeof $.fn.slick === 'undefined') {
+      console.error("Slick não foi carregado corretamente.");
+    } else {
+      $('.carrossel').slick({
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        arrows: true,
+        dots: true
+      });
+    }
+  });
+</script>
 
 <script src="script.js"></script>
 </body>

@@ -346,57 +346,91 @@ section {
 }
 
 /* Carrossel de Promoções */
-.carousel-container {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.carousel {
-    display: flex;
-    overflow: hidden;
-    width: 100%;
-    max-width: 800px;
-    margin: auto;
+/* Estilo para centralizar e limitar a largura do carrossel */
+.carrossel {
+    max-width: 80%; /* Largura máxima do carrossel */
+    margin: auto; /* Centraliza o carrossel */
     position: relative;
 }
 
-.carousel-item {
-    min-width: 100%;
-    transition: transform 0.5s ease;
-    box-sizing: border-box;
-    padding: 10px;
+/* Estilo das imagens no carrossel */
+.carrossel img {
+    width: 100%; /* Imagem ocupa toda a largura do contêiner */
+    height: auto; /* Mantém a proporção da imagem */
+    max-height: 300px; /* Define altura máxima */
+    object-fit: cover; /* Corta a imagem mantendo o enquadramento */
+    border-radius: 10px; /* Bordas arredondadas para suavizar a imagem */
 }
 
-.carousel-item img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
+/* Estilo fixo da descrição das promoções */
+.promo-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7));
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 1; /* Descrição sempre visível */
+    border-radius: 0 0 10px 10px; /* Ajusta o arredondamento */
 }
 
-.carousel-item p {
-    margin-top: 8px;
-    font-size: 16px;
-    color: #333;
+/* Estilo do título e preço */
+.promo-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
 }
 
-.carousel-button {
+.promo-price {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+/* Estilo das setas de navegação */
+.slick-prev, .slick-next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: #333;
-    color: white;
-    border: none;
-    padding: 10px 15px;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semitransparente */
+    color: #fff;
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
     cursor: pointer;
-    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
-.carousel-button.prev {
-    left: 10px;
+/* Posiciona as setas */
+.slick-prev {
+    left: -20px;
 }
 
-.carousel-button.next {
-    right: 10px;
+.slick-next {
+    right: -20px;
+}
+
+/* Remove as palavras padrão e define as setas */
+.slick-prev:before, .slick-next:before {
+    content: none; /* Remove o texto padrão */
+}
+
+.slick-prev::after {
+    content: '‹'; /* Ícone da seta esquerda */
+}
+
+.slick-next::after {
+    content: '›'; /* Ícone da seta direita */
 }
 
 /* Media Query para Tablets (768px a 1024px) */
