@@ -130,53 +130,95 @@ section {
 /* Formulário do Login */
 
 #loginForm {
-    width: 40%;
-    text-align: center;
-    border-radius: 5%;
-    border-style: groove;
-    border-color: black;
+    background-color: white;
     margin: 5px auto;
-}
-
-#login input{
-    display: flex;
-    margin: 5px auto;
-    flex-wrap: wrap;
-    align-items: center;
-    height: 50px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 100%;
+    max-width: 400px;
 }
 
-#loginForm {
+/* Título */
+#loginForm h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Estilo dos grupos de inputs */
+.input-group {
     margin-bottom: 15px;
 }
 
 #loginForm label {
     display: block;
     margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
 }
 
-.inputLogin{
-    margin-left: 5%;
-    text-align: left;
+#loginForm input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
 }
 
-.RedCad{
-    text-align: center;
-    padding: 20px;
+.input-group input:focus {
+    border-color: #007bff;
+    outline: none;
 }
 
+/* Botão de envio */
 .BtnLogin {
-    background-color: orange;
-    color: black;
+    width: 100%;
+    padding: 12px;
+    background-color: #F06225;
+    color: white;
     border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
+    border-radius: 4px;
+    font-size: 16px;
     cursor: pointer;
 }
 
 .BtnLogin:hover {
-    background-color: #cd7c0b;
+    background-color: #D45C1F;
+}
+
+/* Estilo para mensagens de erro */
+.error {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+input.error {
+    border-color: red;  /* Borda vermelha ao redor do campo */
+    background-color: #ffe6e6;  /* Fundo levemente avermelhado */
+}
+
+/* Remove o outline padrão para realçar a borda vermelha */
+input.error:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.3);
+}
+
+/* Estilo para o link de cadastro e senha */
+.RedCad, .RedPwd {
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.RedCad a, .RedPwd a {
+    color: black;
+    text-decoration: none;
+}
+
+.RedCad a:hover, .RedPwd a:hover {
+    text-decoration: underline;
 }
 
 /* Formulário de resetar a senha */
@@ -273,23 +315,54 @@ section {
 
 /* Formulário para Cadastro */
 
-#registerForm{
+/* #registerForm{
     width: 40%;
     text-align: center;
     border-radius: 5%;
     border-style: groove;
     border-color: black;
     margin: 5px auto;
-    /* margin-top: 10%; */
+    margin-top: 10%;
+} */
+
+#registerForm {
+    background-color: white;
+    margin: 5px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+#registerForm h2{
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+#register label{
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;    
 }
 
 #register input{
-    display: flex;
-    margin: 5px auto;
-    flex-wrap: wrap;
-    align-items: center;
-    height: 50px;
-    width: 90%;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.input-group input:focus {
+    border-color: #007bff;
+    outline: none;
 }
 
 .inputReg{
@@ -302,13 +375,53 @@ section {
     padding: 20px;
 }
 
-.BtnRegister{
-    background-color: orange;
-    color: black;
+.BtnRegister {
+    width: 100%;
+    padding: 12px;
+    background-color: #F06225;
+    color: white;
     border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
+    border-radius: 4px;
+    font-size: 16px;
     cursor: pointer;
+}
+
+.BtnRegister:hover {
+    background-color: #D45C1F;
+}
+
+/* Estilo para mensagens de erro */
+.error {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* Estilo do input com erro */
+input.error {
+    border-color: red;  /* Borda vermelha ao redor do campo */
+    background-color: #ffe6e6;  /* Fundo levemente avermelhado */
+}
+
+/* Remove o outline padrão para realçar a borda vermelha */
+input.error:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.3);
+}
+
+/* Estilo para o link de login */
+.RedLogin {
+    text-align: center;
+    font-size: 14px;
+}
+
+.RedLogin a {
+    color: black;
+    text-decoration: none;
+}
+
+.RedLogin a:hover {
+    text-decoration: underline;
 }
 
 
@@ -433,6 +546,118 @@ section {
     content: '›'; /* Ícone da seta direita */
 }
 
+/* Estilo da seção de serviços */
+.services {
+    padding: 40px;
+    text-align: center;
+    background-color: #f5f5f5;
+}
+
+.services h2 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.service-item {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+}
+
+.service-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.service-item h3 {
+    font-size: 20px;
+    color: #F06225;
+    margin-top: 10px;
+}
+
+.service-item p {
+    color: #666;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.service-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #F06225;
+    margin-top: 10px;
+}
+
+
+/* Estilo da seção Sobre Nós */
+.about {
+    padding: 40px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.about h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.about p {
+    color: #666;
+    font-size: 16px;
+    margin-bottom: 40px;
+}
+
+.team {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.team-member {
+    width: 300px;
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+}
+
+.member-photo img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.member-info h3 {
+    font-size: 22px;
+    color: #F06225;
+    margin-top: 10px;
+}
+
+.member-info p {
+    color: #666;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
 /* Media Query para Tablets (768px a 1024px) */
 @media (max-width: 1024px) {
     section {
@@ -441,6 +666,26 @@ section {
 
     .gallery img {
         width: 150px; /* Reduz o tamanho das imagens na galeria */
+    }
+
+    .navbar {
+        display: none; /* Oculta o menu por padrão */
+    }
+    
+    .navbar.active {
+        display: flex; /* Exibe o menu quando a classe 'active' é adicionada */
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background-color: #333;
+        padding: 20px;
+        border-radius: 8px;
+        z-index: 1000;
+    }
+    
+    .navbar-nav li {
+        margin: 10px 0;
     }
 
     .navbar.active {

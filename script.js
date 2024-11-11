@@ -6,12 +6,12 @@
 //     const registerForm = document.getElementById('registerForm');
 //     const resetPasswordForm = document.getElementById('resetPasswordForm');
 //     const contactForm = document.getElementById('contactForm');
-//     const mobileMenu = document.getElementById("mobile-menu");
-//     const navbar = document.getElementById("navbar");
+// const mobileMenu = document.getElementById("mobile-menu");
+// const navbar = document.getElementById("navbar");
 
 //     mobileMenu.addEventListener("click", () => {
 //         navbar.classList.toggle("active");
-//     });
+// });
 
 //     // Mostrar/ocultar formulários
 //     loginBtn.addEventListener('click', () => {
@@ -100,6 +100,18 @@
 // });
 
 
+// Seleciona o menu de hambúrguer e o elemento navbar
+const mobileMenu = document.getElementById('mobile-menu');
+const navbar = document.getElementById('navbar');
+
+// Adiciona um evento de clique no menu de hambúrguer
+mobileMenu.addEventListener('click', () => {
+    // Alterna a classe 'active' no navbar para abrir e fechar o menu
+    navbar.classList.toggle('active');
+    // Alterna a classe 'active' no menu de hambúrguer para a animação de ícone
+    mobileMenu.classList.toggle('active');
+});
+
 // Popup
 // Captura o clique nas imagens da galeria
 document.querySelectorAll('.gallery-item img').forEach(item => {
@@ -127,6 +139,10 @@ document.getElementById('popup').addEventListener('click', function (event) {
         document.getElementById('popup').style.display = 'none';
     }
 });
+
+
+
+
 
 
 // Alterna a exibição do menu de navegação em dispositivos móveis
