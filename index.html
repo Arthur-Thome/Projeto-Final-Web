@@ -5,15 +5,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>TS Computech</title>
     
-        <!-- jQuery deve vir primeiro -->
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        
-        <!-- Slick CSS -->
-        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
-        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
-        
-        <!-- Slick JS (depois do jQuery) -->
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+        <!-- Glide.js CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.theme.min.css">
+    
     
         <link rel="stylesheet" href="style.css">
         <link rel="icon" href="./images/favicon.png" type="image/png">    
@@ -48,44 +43,55 @@
 </div>
 
 <!-- Carrossel de Promoções -->
+<!-- Carrossel de Promoções com Glide.js -->
 <section>
-    <div class="carrossel">
-        <a href="./promotions.html">
-            <div>
-                <img src="images/promo1.png" alt="Promoção 1">
-                <div class="promo-description">
-                    <div class="promo-title">Desconto de até 20% em PCs Gamer!</div>
-                    <div class="promo-price">De R$ 5.000,00 por R$ 4.000,00</div>
-                </div>
-            </div>
-        </a>
-        <a href="./promotions.html">
-            <div>
-                <img src="images/promo1.png" alt="Promoção 2">
-                <div class="promo-description">
-                    <div class="promo-title">Promoção de Placa de Vídeo</div>
-                    <div class="promo-price">De R$ 2.000,00 por R$ 1.800,00</div>
-                </div>
-            </div>
-        </a>
-        <a href="./promotions.html">
-            <div>
-                <img src="images/promo1.png" alt="Promoção 3">
-                <div class="promo-description">
-                    <div class="promo-title">Desconto de 15% em Kits de Upgrade</div>
-                    <div class="promo-price">De R$ 1.500,00 por R$ 1.275,00</div>
-                </div>
-            </div>
-        </a>
-        <a href="./promotions.html">
-            <div>
-                <img src="images/promo1.png" alt="Promoção 4">
-                <div class="promo-description">
-                    <div class="promo-title">Monitor Gamer 144Hz com 10% OFF</div>
-                    <div class="promo-price">De R$ 1.200,00 por R$ 1.080,00</div>
-                </div>
-            </div>
-        </a>
+    <div class="glide" id="promo-carousel">
+        <div class="glide__track" data-glide-el="track">
+            <ul class="glide__slides">
+                <li class="glide__slide">
+                    <a href="./promotions.html">
+                        <img src="images/promo1.png" alt="Promoção 1">
+                        <div class="promo-description">
+                            <div class="promo-title">Desconto de até 20% em PCs Gamer!</div>
+                            <div class="promo-price">De R$ 5.000,00 por R$ 4.000,00</div>
+                        </div>
+                    </a>
+                </li>
+                <li class="glide__slide">
+                    <a href="./promotions.html">
+                        <img src="images/promo1.png" alt="Promoção 2">
+                        <div class="promo-description">
+                            <div class="promo-title">Promoção de Placa de Vídeo</div>
+                            <div class="promo-price">De R$ 2.000,00 por R$ 1.800,00</div>
+                        </div>
+                    </a>
+                </li>
+                <li class="glide__slide">
+                    <a href="./promotions.html">
+                        <img src="images/promo1.png" alt="Promoção 3">
+                        <div class="promo-description">
+                            <div class="promo-title">Desconto de 15% em Kits de Upgrade</div>
+                            <div class="promo-price">De R$ 1.500,00 por R$ 1.275,00</div>
+                        </div>
+                    </a>
+                </li>
+                <li class="glide__slide">
+                    <a href="./promotions.html">
+                        <img src="images/promo1.png" alt="Promoção 4">
+                        <div class="promo-description">
+                            <div class="promo-title">Monitor Gamer 144Hz com 10% OFF</div>
+                            <div class="promo-price">De R$ 1.200,00 por R$ 1.080,00</div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        
+        <!-- Navegação -->
+        <div class="glide__arrows" data-glide-el="controls">
+            <button class="glide__arrow glide__arrow--left" data-glide-dir="<">&lt;</button>
+            <button class="glide__arrow glide__arrow--right" data-glide-dir=">">&gt;</button>
+        </div>
     </div>
 </section>
 
@@ -127,36 +133,33 @@
                 <p><strong>Descrição</strong> PC Gamer </p>
             </div>
         </div>
-        <div class="gallery-item">
-            <img src="./images/pc5.png" alt="PC Gamer">
-            <div class="photo-info">
-                <p><strong>Nome:</strong> PC Gamer</p>
-                <p><strong>Valor:</strong> R$ 900,00</p>
-                <p><strong>Descrição</strong> PC Gamer</p>
-            </div>
-        </div>
-    </div>
 </section>
 
-<script>
-// Carrossel
-$(document).ready(function(){
-    if (typeof $.fn.slick === 'undefined') {
-      console.error("Slick não foi carregado corretamente.");
-    } else {
-      $('.carrossel').slick({
-        infinite: true,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 3000,
-        arrows: true,
-        dots: true
-      });
-    }
-  });
-</script>
+<!-- Glide.js JS -->
+<script src="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/glide.min.js"></script>
 
+<script>
+// Carrossel com Glide.js
+const glide = new Glide('#promo-carousel', {
+    type: 'carousel',    // Tipo de carrossel
+    perView: 1,          // Exibir um slide por vez
+    focusAt: 'center',   // Centralizar o slide atual
+    autoplay: 3000,      // Intervalo de autoplay
+    gap: 0,              // Espaçamento entre os slides
+    keyboard: true,      // Navegação via teclas
+    breakpoints: {
+        1024: {
+            perView: 1,
+        },
+        768: {
+            perView: 1,
+        },
+        480: {
+            perView: 1,
+        }
+    }
+}).mount();
+</script>
 <script src="script.js"></script>
 </body>
 </html>
