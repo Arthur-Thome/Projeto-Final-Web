@@ -224,94 +224,156 @@ input.error:focus {
 /* Formulário de resetar a senha */
 
 #resetPasswordForm {
-    width: 40%;
+    background-color: white;
+    margin: 5px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+#resetPasswordForm h2 {
     text-align: center;
-    border-radius: 5%;
-    border-style: groove;
-    border-color: black;
-    margin: 5px auto;
+    margin-bottom: 20px;
+    color: #333;
 }
 
-#resetPassword input{
-    display: flex;
-    margin: 5px auto;
-    flex-wrap: wrap;
-    align-items: center;
-    height: 50px;
-    width: 90%;
+.inputResetPwd {
+    margin-left: 5%;
+    text-align: left;
+    font-weight: bold;
+    color: #333;
 }
 
-#resetPasswordForm {
+#resetPassword input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
     margin-bottom: 15px;
 }
 
-#resetPasswordForm label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-.inputResetPwd{
-    margin-left: 5%;
-    text-align: left;
+#resetPassword input:focus {
+    border-color: #007bff;
+    outline: none;
 }
 
 .BtnResetPwd {
-    background-color: orange;
-    color: black;
+    width: 100%;
+    padding: 12px;
+    background-color: #F06225;
+    color: white;
     border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
+    border-radius: 4px;
+    font-size: 16px;
     cursor: pointer;
 }
 
 .BtnResetPwd:hover {
-    background-color: #cd7c0b;
+    background-color: #D45C1F;
+}
+
+/* Estilo para mensagens de erro */
+.error {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* Estilo do input com erro */
+input.error {
+    border-color: red;
+    background-color: #ffe6e6;
+}
+
+input.error:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.3);
 }
 
 
 /* Formulário do contato */
 
 #contactForm {
-    width: 40%;
-    text-align: center;
-    border-radius: 5%;
-    border-style: groove;
-    border-color: black;
+    background-color: white;
     margin: 5px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
 }
 
-#contactForm {
+#contactForm h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.inputCon {
+    margin-left: 5%;
+    text-align: left;
+    font-weight: bold;
+    color: #333;
+}
+
+#contact input,
+#contact textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
     margin-bottom: 15px;
 }
 
-.inputCon{
-    margin-left: 5%;
-    text-align: left;
+#contact input:focus,
+#contact textarea:focus {
+    border-color: #007bff;
+    outline: none;
 }
 
-#contactForm input,
-#contactForm textarea {
-    display: flex;
-    margin: 5px auto;
-    flex-wrap: wrap;
-    align-items: center;
-    height: 50px;
-    width: 90%;
+#contact textarea {
+    resize: vertical;
+    min-height: 100px;
 }
 
 .BtnContact {
-    background-color: orange;
-    color: black;
+    width: 100%;
+    padding: 12px;
+    background-color: #F06225;
+    color: white;
     border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
+    border-radius: 4px;
+    font-size: 16px;
     cursor: pointer;
 }
 
 .BtnContact:hover {
-    background-color: #cd7c0b;
+    background-color: #D45C1F;
 }
 
+/* Estilo para mensagens de erro */
+.error {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* Estilo do input com erro */
+input.error,
+textarea.error {
+    border-color: red;
+    background-color: #ffe6e6;
+}
+
+input.error:focus,
+textarea.error:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.3);
+}
 
 /* Formulário para Cadastro */
 
@@ -459,12 +521,22 @@ input.error:focus {
 }
 
 /* Carrossel de Promoções */
-.glide__slide img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
+.glideSection{
+    max-width: 500px;
+    margin: 0 auto;
+    margin-top: 5px;
 }
 
+#promo-carousel {
+    max-width: 500px; /* Define a largura máxima do carrossel */
+    margin: 0 auto;   /* Centraliza o carrossel */
+}
+
+.glide__slide img {
+    width: 100%; /* Garante que as imagens ocupem a largura total do slide */
+    height: 300px;
+    object-fit: cover;
+}
 .glide__arrows {
     position: absolute;
     top: 50%;
@@ -503,7 +575,7 @@ input.error:focus {
 
 /* Estilo do título */
 .glide__slide .promo-title {
-    font-size: 22px; /* Aumenta o tamanho do título */
+    font-size: 20px; /* Aumenta o tamanho do título */
     font-weight: bold;
     margin-bottom: 10px; /* Distância abaixo do título */
 }

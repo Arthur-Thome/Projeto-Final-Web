@@ -141,10 +141,6 @@ document.getElementById('popup').addEventListener('click', function (event) {
 });
 
 
-
-
-
-
 // Alterna a exibição do menu de navegação em dispositivos móveis
 // function toggleMenu() {
 //     const navbar = document.getElementById('navbar');

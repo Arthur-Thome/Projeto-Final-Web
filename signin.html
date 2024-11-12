@@ -26,9 +26,9 @@
                 <li><a href="./services.html">Serviços</a></li>
                 <li><a href="./index.html#gallery">Galeria</a></li>
                 <li><a href="./contact.html">Contato</a></li>
-                <li><a href="./signup.html">Cadastrar</a></li>
-                <li><a href="./signin.html">Login</a></li>
-                <!-- <li><a href="#" onclick="logout()">Logout</a></li> -->
+                <li id="signup"><a href="./signup.html">Cadastrar</a></li>
+                <li id="login"><a href="./signin.html">Login</a></li>
+                <li id="logout" style="display: none;"><a href="#" onclick="logout()">Logout</a></li> 
             </ul>
         </nav>
     </header> -->
@@ -41,12 +41,12 @@
         <!-- <form id="login" action="http://localhost:3000/signin.html" method="POST"> -->
         <form id="login">
             <div class="input-group">
-            <label for="email">E-mail:</label>
-            <input type="email" id="email" name="email" placeholder="Seu Email" required>
+                <label for="username">Nome: </label>
+                <input type="text" id="username" name="username" placeholder="Seu nome" required>
             </div>
             <div class="input-group">
-            <label for="password">Senha:</label>
-            <input type="password" id="password" name="password" placeholder="Sua Senha" required>
+                <label for="password">Senha:</label>
+                <input type="password" id="password" name="password" placeholder="Sua Senha" required>
             </div>
             <p class="RedCad">Já tem uma conta?<a href="./signup.html"> Faça o cadastro</a></p>
             <p class="RedPwd">Esqueceu a senha?<a href="./resetPwd.html"> Resete a senha</a></p>
@@ -56,13 +56,9 @@
 
     <script>
         $(document).ready(function() {
-            $("#register").validate({
+            $("#login").validate({
                 rules: {
                     username: "required",
-                    email: {
-                        required: true,
-                        email: true
-                    },
                     password: {
                         required: true,
                         minlength: 6
@@ -78,8 +74,9 @@
                 }
             });
         });
+
     </script>
         
-    <script src="script.js"></script>
+    <script src="./script.js"></script>
 </body>
 </html>
