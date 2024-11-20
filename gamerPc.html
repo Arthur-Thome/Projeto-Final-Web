@@ -1,101 +1,126 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="./images/favicon.png" type="image/png">
+
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+
     <title>TS Computech</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<header class="header">
-    <div class="logo">
-        <a href="./index.html"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 40 40"><path fill="#F06225" d="M20 0c11.046 0 20 8.954 20 20v14a6 6 0 0 1-6 6H21v-8.774c0-2.002.122-4.076 1.172-5.78a10 10 0 0 1 6.904-4.627l.383-.062a.8.8 0 0 0 0-1.514l-.383-.062a10 10 0 0 1-8.257-8.257l-.062-.383a.8.8 0 0 0-1.514 0l-.062.383a9.999 9.999 0 0 1-4.627 6.904C12.85 18.878 10.776 19 8.774 19H.024C.547 8.419 9.29 0 20 0Z"></path><path fill="#F06225" d="M0 21h8.774c2.002 0 4.076.122 5.78 1.172a10.02 10.02 0 0 1 3.274 3.274C18.878 27.15 19 29.224 19 31.226V40H6a6 6 0 0 1-6-6V21ZM40 2a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"></path></svg></a>
-    </div>
-    <div class="menu-toggle" id="mobile-menu">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-    </div>
-    <nav class="navbar" id="navbar">
-        <ul class="navbar-nav">
-            <li><a href="./index.html">Home</a></li>
-            <li><a href="./aboutus.html">Sobre</a></li>
-            <li><a href="./services.html">Serviços</a></li>
-            <li><a href="./index.html#gallery">Galeria</a></li>
-            <li><a href="./contact.html">Contato</a></li>
-            <li><a href="./signup.html">Cadastrar</a></li>
-            <li><a href="./signin.html">Login</a></li>
-            <!-- <li><a href="#" onclick="logout()">Logout</a></li> -->
-        </ul>
-    </nav>
-</header>
-<div class="title">
-    <h1>Galeria de Fotos</h1>
-</div>
-<section id="gallery">
-    <div class="gallery-container">
-        <div class="gallery-item">
-            <img src="./images/pc1.png" alt="PC Gamer">
-            <div class="photo-info">
-                <p><strong>Pc Gamer TS</strong></p>
-                <p>Intel Core i9-13900K (13ª geração)
-                <!-- <p>R$ 4.500,00</p> -->
-                <p>NVIDIA GeForce RTX 4090</p>
-                <!-- <p>R$ 13.000,00</p> -->
-                <p>ASUS ROG STRIX Z790-E Gaming</p>
-                <!-- <p>R$ 2.300,00</p> -->
-                <p>G.Skill Trident Z5 RGB 32GB (2x16GB) DDR5-6000</p>
-                <!-- <p>R$ 1.500,00</p> -->
-                <p>Samsung 990 PRO 2TB NVMe M.2</p>
-                <!-- <p>R$ 1.300,00</p> -->
-                <p>Corsair RM1000x 80 Plus Gold, Modular, 1000W</p>
-                <!-- <p>R$ 1.000,00</p> -->
-                <p>Gabinete NZXT H7 Elite</p>
-                <!-- <p>R$ 900,00</p> -->
-                <p>NZXT Kraken Z73 RGB 360mm</p>
-                <!-- <p>R$ 1.300,00</p> -->
-                <p>Valor Final: R$ 26.050,00</p>
-                <p>Nota:Inclui R$ 250,00 de mão de obra para montagem profissional.</p>
-            </div>
+    <header class="header">
+        <div class="logo">
+            <a href="./index.html">
+                <a href="./index.html"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none"
+                        viewBox="0 0 40 40">
+                        <path fill="#F06225"
+                            d="M20 0c11.046 0 20 8.954 20 20v14a6 6 0 0 1-6 6H21v-8.774c0-2.002.122-4.076 1.172-5.78a10 10 0 0 1 6.904-4.627l.383-.062a.8.8 0 0 0 0-1.514l-.383-.062a10 10 0 0 1-8.257-8.257l-.062-.383a.8.8 0 0 0-1.514 0l-.062.383a9.999 9.999 0 0 1-4.627 6.904C12.85 18.878 10.776 19 8.774 19H.024C.547 8.419 9.29 0 20 0Z">
+                        </path>
+                        <path fill="#F06225"
+                            d="M0 21h8.774c2.002 0 4.076.122 5.78 1.172a10.02 10.02 0 0 1 3.274 3.274C18.878 27.15 19 29.224 19 31.226V40H6a6 6 0 0 1-6-6V21ZM40 2a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z">
+                        </path>
+                    </svg></a>
+            </a>
         </div>
-        <div class="gallery-item">
-            <img src="./images/pc2.png" alt="PC Gamer">
-            <div class="photo-info">
-                <p><strong>Nome:</strong> PC Gamer</p>
-                <p><strong>Valor:</strong> R$ 12000,00</p>
-                <p><strong>Descrição</strong> PC Gamer</p>
-            </div>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
         </div>
-        <div class="gallery-item">
-            <img src="./images/pc3.png" alt="PC Gamer">
-            <div class="photo-info">
-                <p><strong>Nome:</strong> PC Gamer</p>
-                <p><strong>Valor:</strong> R$ 8000,00</p>
-                <p><strong>Descrição</strong></p>
-                <p><strong>Processador:</strong> I7 11400</p>
-            </div>
-        </div>
-        <div class="gallery-item">
-            <img src="./images/pc4.png" alt="PC Gamer">
-            <div class="photo-info">
-                <p><strong>Nome:</strong> PC Gamer</p>
-                <p><strong>Valor:</strong> R$ 1100,00</p>
-                <p><strong>Descrição</strong> PC Gamer </p>
-            </div>
-        </div>
-        </div>
-    </div>
+        <nav class="navbar" id="navbar">
+            <ul class="navbar-nav">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./aboutus.html">Sobre</a></li>
+                <li><a href="./services.html">Serviços</a></li>
+                <li><a href="./gallery.html">Galeria</a></li>
+                <li><a href="./contact.html">Contato</a></li>
+                <li><a href="./signup.html">Cadastrar</a></li>
+                <li><a href="./signin.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
 
 
-<!-- Popup -->
-<div id="popup" style="display: none;">
-    <span id="close-popup">&times;</span>
-    <img id="popup-image" src="" alt="">
-    <div id="popup-info"></div>
-</div>
+    <section class="product-detail">
+        <div class="product-container">
+            <div class="product-slider">
+                <!-- Slider principal -->
+                <div class="slider-for">
+                    <div><img src="./images/prod1.png" alt="Imagem 1"></div>
+                    <div><img src="./images/prod2.png" alt="Imagem 2"></div>
+                    <div><img src="./images/prod3.png" alt="Imagem 3"></div>
+                    <div><img src="./images/prod4.png" alt="Imagem 4"></div>
+                    <div><img src="./images/prod5.png" alt="Imagem 5"></div>
+                    <div><img src="./images/prod6.png" alt="Imagem 6"></div>
+                </div>
+                <!-- Slider de navegação -->
+                <div class="slider-nav">
+                    <div><img src="./images/thumb1.png" alt="Thumb 1"></div>
+                    <div><img src="./images/thumb2.png" alt="Thumb 2"></div>
+                    <div><img src="./images/thumb3.png" alt="Thumb 3"></div>
+                    <div><img src="./images/thumb4.png" alt="Thumb 4"></div>
+                    <div><img src="./images/thumb5.png" alt="Thumb 5"></div>
+                    <div><img src="./images/thumb6.png" alt="Thumb 6"></div>
+                </div>
+            </div>
+            <div class="product-info">
+                <h1>PC Gamer Pichau Highflyer, Intel I9-14900K, GeForce RTX 4090 24GB, 128GB DDR5, SSD M.2 2TB</h1>
+                <p><strong>Marca:</strong> Pichau</p>
+                <p><strong>Modelo:</strong> Highflyer</p>
+                <p><strong>Memória:</strong> 128GB DDR5</p>
+                <p><strong>Refrigeração:</strong> Water cooler</p>
+                <p><strong>Garantia:</strong> 3 anos</p>
+                <p class="price">
+                    <span class="old-price">De R$ 47.605,48</span> por
+                    <strong class="current-price">R$ 30.999,96</strong>
+                </p>
+            </div>
+        </div>
+    </section>
 
-<script src="script.js"></script>
+
+
+    <footer class="footer">
+        <p>&copy; 2024 TS Computech. Todos os direitos reservados.</p>
+    </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Slider principal
+            $('.slider-for').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: true,
+                fade: true,
+                asNavFor: '.slider-nav'
+            });
+    
+            // Slider de navegação
+            $('.slider-nav').slick({
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                asNavFor: '.slider-for',
+                dots: false,
+                focusOnSelect: true,
+                centerMode: false
+            });
+        });
+    </script>
+    
+
+    <script src="script.js"></script>
 </body>
+
 </html>

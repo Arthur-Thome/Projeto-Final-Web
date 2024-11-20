@@ -76,7 +76,7 @@ section {
     padding: 20px;
 }
 
- section {
+section {
     padding: 20px;
     border: 1px solid #ccc;
     margin: 20px 0;
@@ -702,6 +702,84 @@ input.error:focus {
     color: #666;
     font-size: 14px;
     margin-top: 10px;
+}
+
+
+/* Página do produto */
+.product-detail {
+    max-width: 1200px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.product-container {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+}
+
+/* Informações do produto */
+.product-info {
+    flex: 1;
+    max-width: 50%; /* Ajuste a largura da info */
+}
+
+.product-info h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.product-info p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 5px 0;
+}
+
+.product-info .price {
+    margin-top: 10px;
+}
+
+.product-info .price .old-price {
+    text-decoration: line-through;
+    color: #999;
+}
+
+.product-info .price .current-price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #f06225;
+}
+
+/* Slider */
+.product-slider {
+    flex: 1;
+    width: 1%;
+}
+
+.product-slider .slider-for img {
+    width: 30%;
+    height: auto;
+}
+
+.product-slider .slider-nav img {
+    width: 30%;
+    height: auto;
+    cursor: pointer;
+    margin: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Rodapé */
+.footer {
+    text-align: center;
+    background-color: #212121;
+    color: #fff;
+    padding: 10px 20px;
+    margin-top: 40px;
 }
 
 /* Media Query para Tablets (768px a 1024px) */
