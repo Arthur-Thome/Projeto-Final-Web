@@ -1,0 +1,1070 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Suporte para rolagem suave */
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+}
+
+/* .logo img {
+    height: 50px;  Ajuste a altura conforme necessário 
+} */
+
+.navbar {
+    display: flex;
+}
+
+.navbar-nav {
+    list-style-type: none;
+    display: flex;
+}
+
+.navbar-nav li {
+    margin: 0 15px;
+}
+
+.navbar-nav a {
+    color: white;
+    text-decoration: none;
+}
+
+
+/* Estilos do Menu Hambúrguer */
+.menu-toggle {
+    display: none; /* Oculta por padrão */
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    height: 3px;
+    width: 25px;
+    background-color: white;
+    margin: 3px 0;
+    transition: all 0.3s ease;
+}
+
+.banner {
+    /* background-image: url('./images/banner.png');
+    background-repeat: no-repeat;
+    background-size: cover; */
+    background-color: #555;
+    height: 300px; /* Ajuste a altura conforme necessário */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 2em;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+section {
+    padding: 20px;
+}
+
+section {
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin: 20px 0;
+}
+
+#registerSection, #loginSection {
+    display: block; /* Mostra a seção de registro inicialmente (ou escolha uma)*/
+}
+
+
+.title{
+    text-align: center;
+}
+
+.gallery-container {
+    display: flex;
+    justify-content: space-evenly;
+    grid: 10px;
+    flex-wrap: wrap;
+}
+
+.gallery-item {
+    width: 20%; /* Ajuste a largura conforme necessário */
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    text-align: center;
+    background-color: #f8f8f8;
+}
+
+.gallery-item img {
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+}
+
+.photo-info {
+    padding: 10px;
+}
+
+.photo-info p {
+    margin: 5px 0;
+    font-size: 0.9em;
+    color: #333;
+}
+
+.photo-info strong {
+    color: #555;
+}
+
+/* Formulário do Login */
+
+#loginForm {
+    background-image: url(./images/pcContact.png);
+    background-size: cover;
+    margin: 5px auto;
+    margin-top: 50px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Título */
+#loginForm h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+}
+
+/* Estilo dos grupos de inputs */
+.input-group {
+    margin-bottom: 15px;
+}
+
+#loginForm label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: white;
+}
+
+#loginForm input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+#loginForm p{
+    color: white;
+}
+
+#loginForm a{
+    color: white;
+}
+
+.input-group input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Botão de envio */
+.BtnLogin {
+    width: 100%;
+    padding: 12px;
+    background-color: #F06225;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.BtnLogin:hover {
+    background-color: #D45C1F;
+}
+
+/* Estilo para mensagens de erro */
+.error {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+input.error {
+    border-color: red;  /* Borda vermelha ao redor do campo */
+    background-color: #ffe6e6;  /* Fundo levemente avermelhado */
+}
+
+/* Remove o outline padrão para realçar a borda vermelha */
+input.error:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.3);
+}
+
+/* Estilo para o link de cadastro e senha */
+.RedCad, .RedPwd {
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.RedCad a, .RedPwd a {
+    color: black;
+    text-decoration: none;
+}
+
+.RedCad a:hover, .RedPwd a:hover {
+    text-decoration: underline;
+}
+
+/* Formulário de resetar a senha */
+
+#resetPasswordForm {
+    background-image: url(./images/pcContact.png);
+    background-size: cover;
+    background-position: center;
+    margin: 5px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+#resetPasswordForm h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+}
+
+#resetPasswordForm p{
+    color: white;
+}
+
+#resetPasswordForm a{
+    color: white;
+}
+
+
+.inputResetPwd {
+    margin-left: 5%;
+    text-align: left;
+    font-weight: bold;
+    color: #333;
+}
+
+#resetPassword input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+#resetPassword input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.BtnResetPwd {
+    width: 100%;
+    padding: 12px;
+    background-color: #F06225;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.BtnResetPwd:hover {
+    background-color: #D45C1F;
+}
+
+/* Estilo para mensagens de erro */
+.error {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* Estilo do input com erro */
+input.error {
+    border-color: red;
+    background-color: #ffe6e6;
+}
+
+input.error:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.3);
+}
+
+
+/* Formulário do contato */
+
+/* .contactContainer{
+    background-image: url(./images/pcContact.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+} */
+
+#contactForm {
+    background-image: url(./images/pcContact.png);
+    background-size: cover;
+    margin: 5px auto;
+    margin-top: 50px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 400px;
+}
+
+#contactForm h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.inputCon {
+    margin-left: 5%;
+    text-align: left;
+    font-weight: bold;
+    color: #333;
+}
+
+#contact input,
+#contact textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+#contact label{
+    color: white;
+}
+
+#contact input:focus,
+#contact textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+#contact textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.BtnContact {
+    width: 100%;
+    padding: 12px;
+    background-color: #F06225;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.BtnContact:hover {
+    background-color: #D45C1F;
+}
+
+/* Estilo para mensagens de erro */
+.error {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* Estilo do input com erro */
+input.error,
+textarea.error {
+    border-color: red;
+    background-color: #ffe6e6;
+}
+
+input.error:focus,
+textarea.error:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.3);
+}
+
+.formContact{
+    display: flex;
+    justify-content: space-around;
+}
+
+.contactImage{
+    display: flex;
+    justify-content: space-around;
+}
+
+
+
+/* Formulário para Cadastro */
+
+/* #registerForm{
+    width: 40%;
+    text-align: center;
+    border-radius: 5%;
+    border-style: groove;
+    border-color: black;
+    margin: 5px auto;
+    margin-top: 10%;
+} */
+
+#registerForm {
+    background-image: url(./images/pcContact.png);
+    background-size: cover;
+    margin: 5px auto;
+    margin-top: 50px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+#registerForm h2{
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+}
+
+#registerForm p, #registerForm a {
+    color: white;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+#register label{
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: white;    
+}
+
+#register input{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.input-group input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.inputReg{
+    margin-left: 5%;
+    text-align: left;
+}
+
+.RedLogin{
+    text-align: center;
+    padding: 20px;
+}
+
+.BtnRegister {
+    width: 100%;
+    padding: 12px;
+    background-color: #F06225;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.BtnRegister:hover {
+    background-color: #D45C1F;
+}
+
+/* Estilo para mensagens de erro */
+.error {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* Estilo do input com erro */
+input.error {
+    border-color: red;  /* Borda vermelha ao redor do campo */
+    background-color: #ffe6e6;  /* Fundo levemente avermelhado */
+}
+
+/* Remove o outline padrão para realçar a borda vermelha */
+input.error:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.3);
+}
+
+/* Estilo para o link de login */
+.RedLogin {
+    text-align: center;
+    font-size: 14px;
+}
+
+.RedLogin a {
+    color: black;
+    text-decoration: none;
+}
+
+.RedLogin a:hover {
+    text-decoration: underline;
+}
+
+
+/* Estilo para o popup */
+#popup {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 10;
+}
+#popup img {
+    max-width: 80%;
+    max-height: 80%;
+}
+#close-popup {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: #fff;
+    cursor: pointer;
+}
+#popup-info {
+    color: #fff;
+    text-align: center;
+    margin-top: 15px;
+    max-width: 80%;
+}
+
+/* Carrossel de Promoções */
+.glideSection{
+    max-width: 500px;
+    margin: 0 auto;
+    margin-top: 5px;
+}
+
+#promo-carousel {
+    max-width: 500px; /* Define a largura máxima do carrossel */
+    margin: 0 auto;   /* Centraliza o carrossel */
+}
+
+.glide__slide img {
+    width: 100%; /* Garante que as imagens ocupem a largura total do slide */
+    height: 300px;
+    object-fit: cover;
+}
+.glide__arrows {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.glide__arrow {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* Estilo do contêiner da descrição */
+/* Estilo básico do contêiner da descrição */
+.glide__slide .promo-description {
+    bottom: 20px; /* Distância do fundo */
+    left: 20px; /* Distância da borda esquerda */
+    right: 20px; /* Distância da borda direita */
+    background: rgba(0, 0, 0, 0.7); /* Fundo semi-transparente mais escuro para contraste */
+    padding: 20px; /* Aumenta o espaçamento interno */
+    color: white; /* Cor do texto (garante que as letras fiquem brancas) */
+    font-family: 'Helvetica', sans-serif; /* Fonte mais moderna e limpa */
+    text-align: center; /* Alinhamento no centro */
+    box-sizing: border-box; /* Inclui padding nas dimensões */
+    opacity: 1; /* Garante que o fundo seja visível */
+    display: flex; /* Usando flexbox */
+    flex-direction: column; /* Alinha os itens em uma coluna */
+    justify-content: flex-end; /* Garante que o conteúdo se alinhe ao fundo */
+    transition: 0.3s ease, transform 0.3s ease; /* Transição suave para o hover */
+}
+
+/* Estilo do título */
+.glide__slide .promo-title {
+    font-size: 20px; /* Aumenta o tamanho do título */
+    font-weight: bold;
+    margin-bottom: 10px; /* Distância abaixo do título */
+}
+
+/* Estilo do preço */
+.glide__slide .promo-price {
+    font-size: 18px; /* Aumenta o tamanho do preço */
+    color: #FFD700; /* Cor dourada para destacar o preço */
+    font-weight: 600; /* Peso da fonte para dar ênfase */
+}
+
+/* Efeito de hover na descrição */
+.glide__slide:hover .promo-description {
+    background: rgba(0, 0, 0, 0.85); /* Fundo mais escuro no hover */
+}
+
+/* Estilo da seção de serviços */
+.services {
+    padding: 40px;
+    text-align: center;
+    background-color: #f5f5f5;
+}
+
+.services h2 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.service-item {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+}
+
+.service-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.service-item h3 {
+    font-size: 20px;
+    color: #F06225;
+    margin-top: 10px;
+}
+
+.service-item p {
+    color: #666;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.service-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #F06225;
+    margin-top: 10px;
+}
+
+
+/* Estilo da seção Sobre Nós */
+.about {
+    padding: 40px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.about h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.about p {
+    color: #666;
+    font-size: 16px;
+    margin-bottom: 40px;
+}
+
+.team {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.team-member {
+    width: 300px;
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+}
+
+.member-photo img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.member-info h3 {
+    font-size: 22px;
+    color: #F06225;
+    margin-top: 10px;
+}
+
+.member-info p {
+    color: #666;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+
+/* Página do produto */
+.product-detail {
+    max-width: 1200px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.product-container {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+}
+
+/* Informações do produto */
+.product-info {
+    flex: 1;
+    max-width: 50%; /* Ajuste a largura da info */
+}
+
+.product-info h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.product-info p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 5px 0;
+}
+
+.product-info .price {
+    margin-top: 5px;
+}
+
+.product-info .price .old-price {
+    text-decoration: line-through;
+    color: #999;
+}
+
+.product-info .price .current-price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #f06225;
+}
+
+/* Estilos para os botões "Formas de Pagamento" e "Comprar" */
+.buttons-container button {
+    background-color: #F06225; /* Cor de fundo dos botões */
+    color: white; /* Cor do texto */
+    padding: 10px 20px; /* Espaçamento interno dos botões */
+    border: none; /* Remover borda */
+    border-radius: 5px; /* Bordas arredondadas */
+    font-size: 16px; /* Tamanho da fonte */
+    cursor: pointer; /* Cursor em forma de mãozinha */
+    transition: background-color 0.3s ease; /* Efeito de transição para a cor de fundo */
+    margin-right: 10px; /* Espaço entre os botões */
+}
+
+/* Efeito de hover nos botões */
+.buttons-container button:hover {
+    background-color: #d14e19; /* Cor de fundo ao passar o mouse */
+}
+
+/* Estilo para garantir que os botões fiquem lado a lado */
+.buttons-container {
+    display: flex;
+    justify-content: flex-start; /* Alinha os botões à esquerda */
+    align-items: center; /* Alinha os botões verticalmente */
+    margin-top: 20px; /* Espaçamento superior entre as informações do produto e os botões */
+    margin-bottom: 5px;
+}
+
+.buttons-container button .btn-icon {
+    width: 20px; /* Tamanho da imagem */
+    height: 20px; /* Tamanho da imagem */
+    margin-right: 8px; /* Espaço entre a imagem e o texto */
+}
+
+/* Slider */
+.product-slider {
+    flex: 1;
+    width: 1%;
+}
+
+.product-slider .slider-for img {
+    width: 30%;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.product-slider .slider-nav img {
+    width: 30%;
+    height: auto;
+    cursor: pointer;
+    margin-top: 70px;
+    margin-left: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.container-infotech {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+}
+
+.container-infotech img{
+    width: 24px;
+    height: 24px;
+}
+
+.infotech {
+    flex: 1;
+    max-width: 50%; /* Ajuste a largura da info */
+}
+
+
+/* Rodapé */
+.footer {
+    text-align: center;
+    background-color: #212121;
+    color: #fff;
+    padding: 10px 20px;
+    margin-top: 40px;
+}
+
+/* Media Query para Tablets (768px a 1024px) */
+@media (max-width: 1024px) {
+    section {
+        padding: 40px 0;
+    }
+
+    .gallery img {
+        width: 150px; /* Reduz o tamanho das imagens na galeria */
+    }
+
+    .navbar {
+        display: none; /* Oculta o menu por padrão */
+    }
+    
+    .navbar.active {
+        display: flex; /* Exibe o menu quando a classe 'active' é adicionada */
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background-color: #333;
+        padding: 20px;
+        border-radius: 8px;
+        z-index: 1000;
+    }
+    
+    .navbar-nav li {
+        margin: 10px 0;
+    }
+
+    .navbar.active {
+        display: flex; /* Mostra o menu */
+    }
+
+    .navbar {
+        display: none; /* Oculta o menu padrão */
+        width: 100%; /* Para ocupar toda a largura */
+        background-color: #333;
+        position: absolute;
+        top: 60px; /* Ajuste conforme necessário */
+        left: 0;
+    }
+
+    .navbar-nav {
+        flex-direction: column; /* Muda a direção para coluna */
+        align-items: center; /* Centraliza os itens */
+    }
+
+    .navbar-nav li {
+        margin: 10px 0; /* Margem vertical entre os itens */
+    }
+
+    .menu-toggle {
+        display: flex; /* Exibe o menu hambúrguer em telas menores */
+    }
+
+    /* Carrossel */
+    .promo-description {
+        bottom: 15px;
+        left: 15px;
+        right: 15px;
+        padding: 15px;
+    }
+
+    .promo-title {
+        font-size: 18px;
+    }
+
+    .promo-price {
+        font-size: 16px;
+    }
+}
+
+
+
+/* Media Query para Dispositivos Móveis (até 768px) */
+@media (max-width: 768px) {
+    body {
+        padding: 0 10px; /* Adiciona espaçamento nas laterais */
+    }
+
+    section {
+        padding: 30px 0; /* Reduz o padding das seções */
+    }
+
+    .navbar-nav {
+        flex-direction: column; /* Itens do menu em coluna */
+    }
+
+    .gallery {
+        justify-content: center; /* Centraliza a galeria */
+    }
+
+    .gallery-item {
+        width: 45%; /* Aumenta o tamanho em telas menores */
+        margin: 10px 0;
+    }
+
+    .gallery img {
+        width: 100px; /* Reduz o tamanho das imagens na galeria */
+        margin: 5px; /* Ajusta a margem das imagens */
+    }
+
+    form {
+        margin-top: 20px; /* Adiciona margem ao formulário */
+    }
+
+        /* Menu Hamburguer */
+
+    .navbar.active {
+        display: flex; /* Mostra o menu */
+    }
+
+    .navbar {
+        display: none; /* Oculta o menu padrão */
+        width: 100%; /* Para ocupar toda a largura */
+        background-color: #333;
+        position: absolute;
+        top: 60px; /* Ajuste conforme necessário */
+        left: 0;
+    }
+
+    .navbar-nav {
+        flex-direction: column; /* Muda a direção para coluna */
+        align-items: center; /* Centraliza os itens */
+    }
+
+    .navbar-nav li {
+        margin: 10px 0; /* Margem vertical entre os itens */
+    }
+
+    .menu-toggle {
+        display: flex; /* Exibe o menu hambúrguer em telas menores */
+    }
+
+    /* Carrossel */
+    .promo-description {
+        padding: 12px;
+    }
+
+    .promo-title {
+        font-size: 16px;
+    }
+
+    .promo-price {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-item {
+        width: 100%; /* Cada item ocupa a largura total em telas pequenas */
+    }
+
+    .navbar.active {
+        display: flex; /* Mostra o menu */
+    }
+
+    /* Carrossel */
+
+    .promo-description {
+        bottom: 10px;
+        left: 10px;
+        right: 10px;
+        padding: 10px;
+    }
+
+    .promo-title {
+        font-size: 14px;
+    }
+
+    .promo-price {
+        font-size: 12px;
+    }
+}
+
+@media (min-width: 3000px) {
+    .glide {
+        max-width: 2000px;  /* Máxima largura do carrossel */
+    }
+}
+
