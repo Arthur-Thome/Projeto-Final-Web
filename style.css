@@ -59,9 +59,9 @@ body {
 }
 
 .banner {
-    /* background-image: url('./images/banner.png');
+    background-image: url('./images/banner.png');
     background-repeat: no-repeat;
-    background-size: cover; */
+    background-size: cover;
     background-color: #555;
     height: 300px; /* Ajuste a altura conforme necessário */
     display: flex;
@@ -520,6 +520,16 @@ input.error:focus {
     max-width: 80%;
 }
 
+.title{
+    font-size: 25px;
+    margin: 15px;
+}
+
+.titleCarrossel{
+    text-align: center;
+    font-size: 20px;
+}
+
 /* Carrossel de Promoções */
 .glideSection{
     max-width: 500px;
@@ -587,6 +597,9 @@ input.error:focus {
     font-weight: 600; /* Peso da fonte para dar ênfase */
 }
 
+.promo-price span{
+    text-decoration: line-through;
+}
 /* Efeito de hover na descrição */
 .glide__slide:hover .promo-description {
     background: rgba(0, 0, 0, 0.85); /* Fundo mais escuro no hover */
@@ -779,7 +792,7 @@ input.error:focus {
     background-color: #212121;
     color: #fff;
     padding: 10px 20px;
-    margin-top: 40px;
+    margin-top: 589px;
 }
 
 /* Media Query para Tablets (768px a 1024px) */
