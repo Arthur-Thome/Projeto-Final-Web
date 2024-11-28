@@ -59,9 +59,15 @@ body {
 }
 
 .banner {
+<<<<<<< HEAD
     background-image: url('./images/banner.png');
     background-repeat: no-repeat;
     background-size: cover;
+=======
+    /* background-image: url('./images/banner.png');
+    background-repeat: no-repeat;
+    background-size: cover; */
+>>>>>>> 602a6c52376f5471b8e7c4364c0b2d0243291408
     background-color: #555;
     height: 300px; /* Ajuste a altura conforme necessário */
     display: flex;
@@ -130,8 +136,15 @@ section {
 /* Formulário do Login */
 
 #loginForm {
+<<<<<<< HEAD
     background-color: white;
     margin: 5px auto;
+=======
+    background-image: url(./images/pcContact.png);
+    background-size: cover;
+    margin: 5px auto;
+    margin-top: 50px;
+>>>>>>> 602a6c52376f5471b8e7c4364c0b2d0243291408
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -143,7 +156,11 @@ section {
 #loginForm h2 {
     text-align: center;
     margin-bottom: 20px;
+<<<<<<< HEAD
     color: #333;
+=======
+    color: white;
+>>>>>>> 602a6c52376f5471b8e7c4364c0b2d0243291408
 }
 
 /* Estilo dos grupos de inputs */
@@ -155,7 +172,11 @@ section {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
+<<<<<<< HEAD
     color: #333;
+=======
+    color: white;
+>>>>>>> 602a6c52376f5471b8e7c4364c0b2d0243291408
 }
 
 #loginForm input {
@@ -166,6 +187,17 @@ section {
     font-size: 16px;
 }
 
+<<<<<<< HEAD
+=======
+#loginForm p{
+    color: white;
+}
+
+#loginForm a{
+    color: white;
+}
+
+>>>>>>> 602a6c52376f5471b8e7c4364c0b2d0243291408
 .input-group input:focus {
     border-color: #007bff;
     outline: none;
@@ -224,7 +256,13 @@ input.error:focus {
 /* Formulário de resetar a senha */
 
 #resetPasswordForm {
+<<<<<<< HEAD
     background-color: white;
+=======
+    background-image: url(./images/pcContact.png);
+    background-size: cover;
+    background-position: center;
+>>>>>>> 602a6c52376f5471b8e7c4364c0b2d0243291408
     margin: 5px auto;
     padding: 20px;
     border-radius: 8px;
@@ -236,9 +274,24 @@ input.error:focus {
 #resetPasswordForm h2 {
     text-align: center;
     margin-bottom: 20px;
+<<<<<<< HEAD
     color: #333;
 }
 
+=======
+    color: white;
+}
+
+#resetPasswordForm p{
+    color: white;
+}
+
+#resetPasswordForm a{
+    color: white;
+}
+
+
+>>>>>>> 602a6c52376f5471b8e7c4364c0b2d0243291408
 .inputResetPwd {
     margin-left: 5%;
     text-align: left;
@@ -296,12 +349,30 @@ input.error:focus {
 
 /* Formulário do contato */
 
+<<<<<<< HEAD
 #contactForm {
     background-color: white;
     margin: 5px auto;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+=======
+/* .contactContainer{
+    background-image: url(./images/pcContact.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+} */
+
+#contactForm {
+    background-image: url(./images/pcContact.png);
+    background-size: cover;
+    margin: 5px auto;
+    margin-top: 50px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+>>>>>>> 602a6c52376f5471b8e7c4364c0b2d0243291408
     width: 100%;
     max-width: 400px;
 }
@@ -309,7 +380,11 @@ input.error:focus {
 #contactForm h2 {
     text-align: center;
     margin-bottom: 20px;
+<<<<<<< HEAD
     color: #333;
+=======
+    color: white;
+>>>>>>> 602a6c52376f5471b8e7c4364c0b2d0243291408
 }
 
 .inputCon {
@@ -329,6 +404,13 @@ input.error:focus {
     margin-bottom: 15px;
 }
 
+<<<<<<< HEAD
+=======
+#contact label{
+    color: white;
+}
+
+>>>>>>> 602a6c52376f5471b8e7c4364c0b2d0243291408
 #contact input:focus,
 #contact textarea:focus {
     border-color: #007bff;
@@ -375,6 +457,21 @@ textarea.error:focus {
     box-shadow: 0 0 5px rgba(255, 0, 0, 0.3);
 }
 
+<<<<<<< HEAD
+=======
+.formContact{
+    display: flex;
+    justify-content: space-around;
+}
+
+.contactImage{
+    display: flex;
+    justify-content: space-around;
+}
+
+
+
+>>>>>>> 602a6c52376f5471b8e7c4364c0b2d0243291408
 /* Formulário para Cadastro */
 
 /* #registerForm{
@@ -388,9 +485,16 @@ textarea.error:focus {
 } */
 
 #registerForm {
+<<<<<<< HEAD
     background-color: white;
     margin: 5px auto;
     padding: 20px;
+=======
+    background-image: url(./images/pcContact.png);
+    background-size: cover;
+    margin: 5px auto;
+    margin-top: 50px;
+>>>>>>> 602a6c52376f5471b8e7c4364c0b2d0243291408
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 100%;
@@ -400,7 +504,15 @@ textarea.error:focus {
 #registerForm h2{
     text-align: center;
     margin-bottom: 20px;
+<<<<<<< HEAD
     color: #333;
+=======
+    color: white;
+}
+
+#registerForm p, #registerForm a {
+    color: white;
+>>>>>>> 602a6c52376f5471b8e7c4364c0b2d0243291408
 }
 
 .input-group {
@@ -411,7 +523,11 @@ textarea.error:focus {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
+<<<<<<< HEAD
     color: #333;    
+=======
+    color: white;    
+>>>>>>> 602a6c52376f5471b8e7c4364c0b2d0243291408
 }
 
 #register input{
@@ -520,6 +636,7 @@ input.error:focus {
     max-width: 80%;
 }
 
+<<<<<<< HEAD
 .title{
     font-size: 25px;
     margin: 15px;
@@ -530,6 +647,8 @@ input.error:focus {
     font-size: 20px;
 }
 
+=======
+>>>>>>> 602a6c52376f5471b8e7c4364c0b2d0243291408
 /* Carrossel de Promoções */
 .glideSection{
     max-width: 500px;
@@ -597,9 +716,12 @@ input.error:focus {
     font-weight: 600; /* Peso da fonte para dar ênfase */
 }
 
+<<<<<<< HEAD
 .promo-price span{
     text-decoration: line-through;
 }
+=======
+>>>>>>> 602a6c52376f5471b8e7c4364c0b2d0243291408
 /* Efeito de hover na descrição */
 .glide__slide:hover .promo-description {
     background: rgba(0, 0, 0, 0.85); /* Fundo mais escuro no hover */
@@ -752,7 +874,11 @@ input.error:focus {
 }
 
 .product-info .price {
+<<<<<<< HEAD
     margin-top: 10px;
+=======
+    margin-top: 5px;
+>>>>>>> 602a6c52376f5471b8e7c4364c0b2d0243291408
 }
 
 .product-info .price .old-price {
@@ -766,6 +892,42 @@ input.error:focus {
     color: #f06225;
 }
 
+<<<<<<< HEAD
+=======
+/* Estilos para os botões "Formas de Pagamento" e "Comprar" */
+.buttons-container button {
+    background-color: #F06225; /* Cor de fundo dos botões */
+    color: white; /* Cor do texto */
+    padding: 10px 20px; /* Espaçamento interno dos botões */
+    border: none; /* Remover borda */
+    border-radius: 5px; /* Bordas arredondadas */
+    font-size: 16px; /* Tamanho da fonte */
+    cursor: pointer; /* Cursor em forma de mãozinha */
+    transition: background-color 0.3s ease; /* Efeito de transição para a cor de fundo */
+    margin-right: 10px; /* Espaço entre os botões */
+}
+
+/* Efeito de hover nos botões */
+.buttons-container button:hover {
+    background-color: #d14e19; /* Cor de fundo ao passar o mouse */
+}
+
+/* Estilo para garantir que os botões fiquem lado a lado */
+.buttons-container {
+    display: flex;
+    justify-content: flex-start; /* Alinha os botões à esquerda */
+    align-items: center; /* Alinha os botões verticalmente */
+    margin-top: 20px; /* Espaçamento superior entre as informações do produto e os botões */
+    margin-bottom: 5px;
+}
+
+.buttons-container button .btn-icon {
+    width: 20px; /* Tamanho da imagem */
+    height: 20px; /* Tamanho da imagem */
+    margin-right: 8px; /* Espaço entre a imagem e o texto */
+}
+
+>>>>>>> 602a6c52376f5471b8e7c4364c0b2d0243291408
 /* Slider */
 .product-slider {
     flex: 1;
@@ -775,24 +937,58 @@ input.error:focus {
 .product-slider .slider-for img {
     width: 30%;
     height: auto;
+<<<<<<< HEAD
+=======
+    margin: 0 auto;
+    margin-top: 10px;
+>>>>>>> 602a6c52376f5471b8e7c4364c0b2d0243291408
 }
 
 .product-slider .slider-nav img {
     width: 30%;
     height: auto;
     cursor: pointer;
+<<<<<<< HEAD
     margin: 5px;
+=======
+    margin-top: 70px;
+    margin-left: 30px;
+>>>>>>> 602a6c52376f5471b8e7c4364c0b2d0243291408
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 
+<<<<<<< HEAD
+=======
+.container-infotech {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+}
+
+.container-infotech img{
+    width: 24px;
+    height: 24px;
+}
+
+.infotech {
+    flex: 1;
+    max-width: 50%; /* Ajuste a largura da info */
+}
+
+
+>>>>>>> 602a6c52376f5471b8e7c4364c0b2d0243291408
 /* Rodapé */
 .footer {
     text-align: center;
     background-color: #212121;
     color: #fff;
     padding: 10px 20px;
+<<<<<<< HEAD
     margin-top: 589px;
+=======
+    margin-top: 40px;
+>>>>>>> 602a6c52376f5471b8e7c4364c0b2d0243291408
 }
 
 /* Media Query para Tablets (768px a 1024px) */

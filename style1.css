@@ -1,0 +1,183 @@
+/* Geral */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* Header */
+.header {
+    background-color: #212121;
+    color: white;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .logo img {
+    width: 120px;
+}
+
+.navbar ul {
+    display: flex;
+    gap: 15px;
+}
+
+.navbar ul li a {
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    transition: background-color 0.3s;
+}
+
+.navbar ul li a:hover {
+    background-color: #f06225;
+    border-radius: 5px;
+}
+
+/* Product Detail */
+.product-detail {
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+    background-color: #fff;
+}
+
+.product-container {
+    display: flex;
+    gap: 20px;
+}
+
+.product-slider {
+    width: 50%;
+}
+
+.slider-for img {
+    width: 100%;
+    height: auto;
+}
+
+.slider-nav {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.slider-nav img {
+    width: 80px;
+    height: auto;
+    border: 2px solid #ddd;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.product-info {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.product-info h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.product-info p {
+    font-size: 16px;
+}
+
+.price {
+    font-size: 22px;
+    margin-top: 20px;
+}
+
+.price .old-price {
+    text-decoration: line-through;
+    color: #a1a1a1;
+    margin-right: 10px;
+}
+
+.price .current-price {
+    color: #f06225;
+    font-weight: bold;
+}
+
+.payment-options {
+    margin-top: 30px;
+}
+
+.buy-btn {
+    background-color: #f06225;
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    width: 100%;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.payment-methods {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.payment-methods img {
+    width: 50px;
+    height: auto;
+}
+
+.game-performance {
+    margin-top: 30px;
+}
+
+.game-performance h3 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.game-performance-item {
+    display: flex;
+    gap: 20px;
+}
+
+.game-performance-item img {
+    width: 100px;
+    height: auto;
+}
+
+.fps-info p {
+    font-size: 16px;
+    color: #444;
+}
+
+/* Footer */
+.footer {
+    background-color: #212121;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+}
