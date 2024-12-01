@@ -109,7 +109,8 @@ section {
 }
 
 .gallery-item img {
-    width: 100%;
+    width: 200px;
+    height: 200px;
     border-bottom: 1px solid #ddd;
 }
 
@@ -594,9 +595,10 @@ input.error:focus {
 }
 
 .glide__slide img {
-    width: 100%; /* Garante que as imagens ocupem a largura total do slide */
+    width: 500px; /* Garante que as imagens ocupem a largura total do slide */
     height: 300px;
     object-fit: cover;
+    margin: 0 auto;
 }
 .glide__arrows {
     position: absolute;
