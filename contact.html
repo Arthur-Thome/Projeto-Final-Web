@@ -1,9 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<<<<<<< HEAD
-=======
-
->>>>>>> 602a6c52376f5471b8e7c4364c0b2d0243291408
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,10 +9,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
 </head>
-<<<<<<< HEAD
-=======
 
->>>>>>> 602a6c52376f5471b8e7c4364c0b2d0243291408
 <body>
     <!-- <header class="header">
         <div class="logo">
@@ -40,7 +33,6 @@
             </ul>
         </nav>
     </header> -->
-<<<<<<< HEAD
 
     <section id="contactForm">
         <div class="logo">
@@ -114,88 +106,4 @@
 
 <script src="script.js"></script>
 </body>
-=======
-    <div class="contactContainer">
-        <section id="contactForm">
-            <div class="logo">
-                <a href="./index.html"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none"
-                        viewBox="0 0 40 40">
-                        <path fill="#F06225"
-                            d="M20 0c11.046 0 20 8.954 20 20v14a6 6 0 0 1-6 6H21v-8.774c0-2.002.122-4.076 1.172-5.78a10 10 0 0 1 6.904-4.627l.383-.062a.8.8 0 0 0 0-1.514l-.383-.062a10 10 0 0 1-8.257-8.257l-.062-.383a.8.8 0 0 0-1.514 0l-.062.383a9.999 9.999 0 0 1-4.627 6.904C12.85 18.878 10.776 19 8.774 19H.024C.547 8.419 9.29 0 20 0Z">
-                        </path>
-                        <path fill="#F06225"
-                            d="M0 21h8.774c2.002 0 4.076.122 5.78 1.172a10.02 10.02 0 0 1 3.274 3.274C18.878 27.15 19 29.224 19 31.226V40H6a6 6 0 0 1-6-6V21ZM40 2a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z">
-                        </path>
-                    </svg></a>
-            </div>
-            <h2>Contato</h2>
-            <!-- <form id="contact" action="http://localhost:3000/contact" method="POST"> -->
-            <form id="contact">
-                <div class="input-group">
-                    <label for="username">Nome: </label>
-                    <input type="text" name="username" id="username" placeholder="Nome Completo" required>
-                </div>
-                <div class="input-group">
-                    <label for="email">Email: </label>
-                    <input type="email" name="email" id="email" placeholder="Seu Email" required>
-                </div>
-                <div class="input-group">
-                    <label for="subject">Assunto: </label>
-                    <input type="text" name="subject" id="subject" placeholder="Assunto" required>
-                </div>
-                <div class="input-group">
-                    <label for="message">Mensagem: </label>
-                    <textarea name="message" id="message" placeholder="Sua Mensagem" required></textarea>
-                </div>
-                <button class="BtnContact" type="submit">Enviar</button>
-            </form>
-        </section>
-    </div>
-
-    <script>
-        $(document).ready(function () {
-            $("#contact").validate({
-                rules: {
-                    username: "required",
-                    email: {
-                        required: true,
-                        email: true
-                    },
-                    password: {
-                        required: true,
-                        minlength: 6
-                    },
-                    subject: {
-                        required: true,
-                        minlength: 15
-                    },
-                    message: {
-                        required: true,
-                        minlength: 40
-                    }
-                },
-                messages: {
-                    username: "Por favor, insira seu nome completo",
-                    email: "Por favor, insira um email válido",
-                    password: {
-                        required: "Por favor, insira uma senha",
-                        minlength: "A senha deve ter pelo menos 6 caracteres",
-                    },
-                    subject: {
-                        required: "Por favor, insira um assunto",
-                        minlength: "O assunto deve ter pelo menos 15 caracteres",
-                    },
-                    message: {
-                        required: "Por favor, insira uma mensagem",
-                        minlength: "A mensagem deve ter pelo menos 40 caracteres",
-                    }
-                }
-            });
-        });
-    </script>
-
-    <script src="script.js"></script>
-</body>
-
->>>>>>> 602a6c52376f5471b8e7c4364c0b2d0243291408
 </html>
