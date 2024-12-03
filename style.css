@@ -848,6 +848,7 @@ input.error:focus {
 .product-info {
     flex: 1;
     max-width: 50%; /* Ajuste a largura da info */
+    margin-top: 30px;
 }
 
 .product-info h1 {
@@ -959,6 +960,10 @@ input.error:focus {
     gap: 33px; /* Espaçamento entre os parágrafos */
 }
 
+.slider-for-keyboard img{
+    height: 500px;
+}
+
 /* Estilo da página Blog */
 .faq-container {
     padding: 20px;
@@ -1048,116 +1053,157 @@ input.error:focus {
 
 
 /* Página do Carrinho */
-.cart-page {
+main {
+    max-width: 1200px;
+    margin: 20px auto;
     padding: 20px;
-    max-width: 900px;
-    margin: 0 auto;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
 }
 
-.cart-page h1 {
-    text-align: center;
-    color: #212121;
-    margin-bottom: 20px;
+#cart-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-/* Tabela */
-.cart-table {
+#cart-table {
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 20px;
-    font-size: 16px;
 }
 
-.cart-table thead {
-    background-color: #f06225;
-    color: #fff;
-}
-
-.cart-table th,
-.cart-table td {
+#cart-table thead tr {
+    background-color: #F06225;
+    color: white;
     text-align: left;
-    padding: 10px;
-    border: 1px solid #ddd;
 }
 
-.cart-table th {
+#cart-table th, 
+#cart-table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+#cart-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#cart-table tbody tr:hover {
+    background-color: #f8d7c3;
+}
+
+#cart-summary {
+    text-align: right;
+    font-size: 18px;
     font-weight: bold;
 }
 
-.cart-table td input.quantity-input {
-    width: 60px;
-    text-align: center;
+#cart-summary h3 {
+    color: #F06225;
 }
 
-/* Botões */
-.btn-remove {
-    background-color: #f06225;
-    color: #fff;
+button {
+    padding: 8px 12px;
     border: none;
-    padding: 5px 10px;
-    cursor: pointer;
     border-radius: 4px;
-    transition: background-color 0.3s;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
 }
 
-.btn-remove:hover {
-    background-color: #d9531e;
+button:focus {
+    outline: none;
 }
 
-/* Resumo */
-.cart-summary {
-    text-align: right;
-    margin-top: 20px;
+/* Botões de ação */
+button.increase, button.decrease {
+    background-color: #F06225;
+    color: white;
+}
+
+button.increase:hover, button.decrease:hover {
+    background-color: #d24f1e;
+}
+
+button.remove {
+    background-color: #e63946;
+    color: white;
+}
+
+button.remove:hover {
+    background-color: #c72d38;
+}
+
+#empty-cart {
+    text-align: center;
     font-size: 18px;
 }
 
-.btn-checkout {
-    background-color: #4caf50;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 4px;
-    font-size: 16px;
-    transition: background-color 0.3s;
+#empty-cart p {
+    margin-bottom: 15px;
 }
 
-.btn-checkout:hover {
-    background-color: #3e8e41;
+#empty-cart a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #F06225;
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+#empty-cart a:hover {
+    background-color: #d24f1e;
 }
 
 
 
 /* Rodapé */
 .footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: #212121;
-    color: #fff;
-    text-align: center;
-    padding: 10px 20px;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+    background-color: #222; /* Cor de fundo do rodapé */
+    color: #fff; /* Cor do texto */
+    padding: 20px;
+    display: flex; /* Ativar Flexbox */
+    justify-content: space-between; /* Espaço entre as divs */
+    align-items: center; /* Alinhamento vertical */
+    flex-wrap: wrap; /* Permitir quebra em telas pequenas */
+    font-size: 14px; /* Tamanho da fonte ajustado */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave para destacar o rodapé */
 }
 
-/* Menu no Rodapé */
 .footer-menu {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 10px;
+    display: flex; /* Usar Flexbox para organizar links */
+    gap: 20px; /* Espaçamento entre os links */
 }
 
 .footer-menu a {
     color: #fff;
     text-decoration: none;
-    font-weight: bold;
     transition: color 0.3s;
+    font-weight: 500; /* Aumenta o peso da fonte para um visual mais robusto */
 }
 
 .footer-menu a:hover {
-    color: #f06225;
+    color: #f06225; /* Cor de destaque ao passar o mouse */
+}
+
+.footer-rights {
+    text-align: right;
+    font-size: 14px;
+    color: #bbb; /* Cor mais suave para os direitos autorais */
+}
+
+.footer-rights a {
+    color: #bbb;
+    text-decoration: none;
+    font-weight: 400; /* Deixa o texto mais leve */
+}
+
+.footer-rights a:hover {
+    color: #f06225; /* Cor de destaque ao passar o mouse */
 }
 
 
@@ -1268,8 +1314,7 @@ input.error:focus {
         margin-top: 20px; /* Adiciona margem ao formulário */
     }
 
-        /* Menu Hamburguer */
-
+    /* Menu Hamburguer */
     .navbar.active {
         display: flex; /* Mostra o menu */
     }
@@ -1307,6 +1352,23 @@ input.error:focus {
 
     .promo-price {
         font-size: 14px;
+    }
+
+    main {
+        padding: 15px;
+    }
+
+    #cart-table th, #cart-table td {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 12px;
+    }
+
+    #cart-summary {
+        font-size: 16px;
     }
 }
 

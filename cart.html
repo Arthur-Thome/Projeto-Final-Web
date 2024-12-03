@@ -14,7 +14,15 @@
     <header class="header">
         <div class="logo">
             <a href="./index.html">
-                <a href="./index.html"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 40 40"><path fill="#F06225" d="M20 0c11.046 0 20 8.954 20 20v14a6 6 0 0 1-6 6H21v-8.774c0-2.002.122-4.076 1.172-5.78a10 10 0 0 1 6.904-4.627l.383-.062a.8.8 0 0 0 0-1.514l-.383-.062a10 10 0 0 1-8.257-8.257l-.062-.383a.8.8 0 0 0-1.514 0l-.062.383a9.999 9.999 0 0 1-4.627 6.904C12.85 18.878 10.776 19 8.774 19H.024C.547 8.419 9.29 0 20 0Z"></path><path fill="#F06225" d="M0 21h8.774c2.002 0 4.076.122 5.78 1.172a10.02 10.02 0 0 1 3.274 3.274C18.878 27.15 19 29.224 19 31.226V40H6a6 6 0 0 1-6-6V21ZM40 2a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"></path></svg></a>
+                <a href="./index.html"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none"
+                        viewBox="0 0 40 40">
+                        <path fill="#F06225"
+                            d="M20 0c11.046 0 20 8.954 20 20v14a6 6 0 0 1-6 6H21v-8.774c0-2.002.122-4.076 1.172-5.78a10 10 0 0 1 6.904-4.627l.383-.062a.8.8 0 0 0 0-1.514l-.383-.062a10 10 0 0 1-8.257-8.257l-.062-.383a.8.8 0 0 0-1.514 0l-.062.383a9.999 9.999 0 0 1-4.627 6.904C12.85 18.878 10.776 19 8.774 19H.024C.547 8.419 9.29 0 20 0Z">
+                        </path>
+                        <path fill="#F06225"
+                            d="M0 21h8.774c2.002 0 4.076.122 5.78 1.172a10.02 10.02 0 0 1 3.274 3.274C18.878 27.15 19 29.224 19 31.226V40H6a6 6 0 0 1-6-6V21ZM40 2a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z">
+                        </path>
+                    </svg></a>
             </a>
         </div>
         <div class="menu-toggle" id="mobile-menu">
@@ -41,99 +49,112 @@
                 <thead>
                     <tr>
                         <th>Produto</th>
-                        <th>Quantidade</th>
                         <th>Preço</th>
+                        <th>Quantidade</th>
                         <th>Total</th>
                         <th>Ações</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- Os itens do carrinho serão inseridos aqui dinamicamente -->
+                    <!-- Os itens do carrinho serão adicionados dinamicamente aqui -->
                 </tbody>
             </table>
-            <div id="cart-total">
-                <h3>Total: R$ <span id="total-price">0.00</span></h3>
+
+            <div id="cart-summary">
+                <h3>Total: R$ <span id="cart-total">0,00</span></h3>
             </div>
-            <div id="empty-cart">
-                <p>Seu carrinho está vazio!</p>
-                <a href="./gamerPC.html">Voltar para a loja</a>
+
+            <div id="empty-cart" style="display: none;">
+                <p>Seu carrinho está vazio, que tal comprar alguma coisa?</p>
+                <a href="index.html">Voltar para a Loja</a>
             </div>
         </div>
     </main>
 
     <footer class="footer">
+        <div class="footer-menu">
+            <a href="./faq.html">Dúvidas Frequentes</a>
+            <a href="./branches.html">Filiais</a>
+        </div>
+        <div class="footer-rigths">
         <p>&copy; 2024 TS Computech. Todos os direitos reservados.</p>
+        </div>
     </footer>
-</body>
 
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const cartTableBody = document.querySelector('#cart-table tbody');
-        const totalPriceElement = document.querySelector('#total-price');
-        const emptyCartMessage = document.querySelector('#empty-cart');
-        const cartContainer = document.querySelector('#cart-container');
+    <script>
+        // Função para verificar o estado do carrinho
+        function updateCartView() {
+            const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartTable = document.getElementById('cart-table');
+            const emptyCart = document.getElementById('empty-cart');
+            const cartSummary = document.getElementById('cart-summary');
 
-        // Recuperar carrinho do localStorage
-        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            if (cartItems.length === 0) {
+                // Exibir mensagem de carrinho vazio
+                cartTable.style.display = 'none';
+                cartSummary.style.display = 'none';
+                emptyCart.style.display = 'block';
+            } else {
+                // Exibir tabela do carrinho
+                cartTable.style.display = 'table';
+                cartSummary.style.display = 'block';
+                emptyCart.style.display = 'none';
 
-        const updateCart = () => {
-            cartTableBody.innerHTML = '';
-            let total = 0;
+                // Renderizar os itens do carrinho na tabela
+                const tbody = cartTable.querySelector('tbody');
+                tbody.innerHTML = ''; // Limpa a tabela antes de adicionar os itens
 
-            if (cart.length === 0) {
-                cartContainer.style.display = 'none';
-                emptyCartMessage.style.display = 'block';
-                return;
-            }
+                let total = 0;
+                cartItems.forEach((item, index) => {
+                    const itemTotal = item.price * item.quantity;
+                    total += itemTotal;
 
-            cart.forEach((item, index) => {
-                const itemTotal = item.price * item.quantity;
-                total += itemTotal;
-
-                const row = `
-                    <tr>
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
                         <td>${item.name}</td>
-                        <td>
-                            <button class="decrease-btn" data-index="${index}">-</button>
-                            ${item.quantity}
-                            <button class="increase-btn" data-index="${index}">+</button>
-                        </td>
                         <td>R$ ${item.price.toFixed(2)}</td>
-                        <td>R$ ${itemTotal.toFixed(2)}</td>
                         <td>
-                            <button class="remove-btn" data-index="${index}">Remover</button>
+                            <button class="decrease" onclick="changeQuantity(${index}, -1)">-</button>
+                            ${item.quantity}
+                            <button class="increase" onclick="changeQuantity(${index}, 1)">+</button>
                         </td>
-                    </tr>
-                `;
+                        <td>R$ ${itemTotal.toFixed(2)}</td>
+                        <td><button class="remove" onclick="removeItem(${index})">Remover</button></td>
+                    `;
+                    tbody.appendChild(row);
+                });
 
-                cartTableBody.insertAdjacentHTML('beforeend', row);
-            });
+                // Atualizar o total no resumo do carrinho
+                document.getElementById('cart-total').textContent = total.toFixed(2);
+            }
+        }
 
-            totalPriceElement.textContent = total.toFixed(2);
-            emptyCartMessage.style.display = 'none';
-            cartContainer.style.display = 'block';
-        };
+        // Função para alterar a quantidade de um item
+        function changeQuantity(index, delta) {
+            const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+            cartItems[index].quantity += delta;
 
-        // Adicionar eventos aos botões
-        cartTableBody.addEventListener('click', (e) => {
-            const target = e.target;
-            const index = target.dataset.index;
-
-            if (target.classList.contains('increase-btn')) {
-                cart[index].quantity += 1;
-            } else if (target.classList.contains('decrease-btn')) {
-                cart[index].quantity = Math.max(1, cart[index].quantity - 1);
-            } else if (target.classList.contains('remove-btn')) {
-                cart.splice(index, 1);
+            if (cartItems[index].quantity <= 0) {
+                cartItems.splice(index, 1);
             }
 
-            localStorage.setItem('cart', JSON.stringify(cart));
-            updateCart();
-        });
+            localStorage.setItem('cart', JSON.stringify(cartItems));
+            updateCartView();
+        }
 
-        // Atualizar carrinho ao carregar a página
-        updateCart();
-    });
-</script>
+        // Função para remover um item do carrinho
+        function removeItem(index) {
+            const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+            cartItems.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cartItems));
+            updateCartView();
+        }
+
+        // Inicializar a visualização do carrinho
+        updateCartView();
+    </script>
+
+    <script src="./script.js"></script>
+</body>
 
 </html>

@@ -38,35 +38,48 @@ document.getElementById('popup').addEventListener('click', function (event) {
     }
 });
 
-// Gerenciamento do carrinho
+// Carrinho
 
 document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM completamente carregado');
+    
     const buyButton = document.querySelector('.buy-btn');
+    
+    if (!buyButton) {
+        console.log('Botão não encontrado');
+        return;  // Interrompe o script caso o botão não seja encontrado
+    }
 
-    // Produto exemplo para adicionar ao carrinho
-    const product = {
-        name: "PC Gamer Pichau Highflyer",
-        price: 30999.96,
-        quantity: 1
-    };
+    console.log('Botão encontrado:', buyButton);  // Se o botão for encontrado, este log aparece
 
-    // Adicionar ao carrinho
+    const productId = buyButton.dataset.productId;
+    const productName = buyButton.dataset.productName;
+    const productPrice = parseFloat(buyButton.dataset.productPrice);
+
     buyButton.addEventListener('click', () => {
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-        // Verificar se o produto já existe no carrinho
-        const existingProductIndex = cart.findIndex(item => item.name === product.name);
-        if (existingProductIndex > -1) {
-            cart[existingProductIndex].quantity += 1; // Incrementar quantidade
+        // Verifica se o produto já está no carrinho
+        const existingProduct = cart.find(item => item.id === productId);
+        if (existingProduct) {
+            existingProduct.quantity += 1;
         } else {
-            cart.push(product); // Adicionar novo produto
+            cart.push({
+                id: productId,
+                name: productName,
+                price: productPrice,
+                quantity: 1,
+            });
         }
 
-        // Salvar no localStorage
         localStorage.setItem('cart', JSON.stringify(cart));
 
-        // Redirecionar ao carrinho
+        // Redireciona para o carrinho
         window.location.href = './cart.html';
     });
 });
+
+
+
+
 

@@ -1,106 +1,123 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="./images/favicon.png" type="image/png">
     <title>TS Computech</title>
     <link rel="stylesheet" href="style.css">
-     <!-- Plugin AOS CSS -->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <!-- Plugin AOS CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 </head>
+
 <body>
 
-<header class="header">
-    <div class="logo">
-        <a href="./index.html"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 40 40"><path fill="#F06225" d="M20 0c11.046 0 20 8.954 20 20v14a6 6 0 0 1-6 6H21v-8.774c0-2.002.122-4.076 1.172-5.78a10 10 0 0 1 6.904-4.627l.383-.062a.8.8 0 0 0 0-1.514l-.383-.062a10 10 0 0 1-8.257-8.257l-.062-.383a.8.8 0 0 0-1.514 0l-.062.383a9.999 9.999 0 0 1-4.627 6.904C12.85 18.878 10.776 19 8.774 19H.024C.547 8.419 9.29 0 20 0Z"></path><path fill="#F06225" d="M0 21h8.774c2.002 0 4.076.122 5.78 1.172a10.02 10.02 0 0 1 3.274 3.274C18.878 27.15 19 29.224 19 31.226V40H6a6 6 0 0 1-6-6V21ZM40 2a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"></path></svg></a>
-    </div>
-    <div class="menu-toggle" id="mobile-menu">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-    </div>
-    <nav class="navbar" id="navbar">
-        <ul class="navbar-nav">
-            <li><a href="./index.html">Home</a></li>
-            <li><a href="./aboutus.html">Sobre</a></li>
-            <li><a href="./services.html">Serviços</a></li>
-            <li><a href="./index.html#gallery">Galeria</a></li>
-            <li><a href="./contact.html">Contato</a></li>
-            <li><a href="./signup.html">Cadastrar</a></li>
-            <li><a href="./signin.html">Login</a></li>
-        </ul>
-    </nav>
-</header>
+    <header class="header">
+        <div class="logo">
+            <a href="./index.html"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none"
+                    viewBox="0 0 40 40">
+                    <path fill="#F06225"
+                        d="M20 0c11.046 0 20 8.954 20 20v14a6 6 0 0 1-6 6H21v-8.774c0-2.002.122-4.076 1.172-5.78a10 10 0 0 1 6.904-4.627l.383-.062a.8.8 0 0 0 0-1.514l-.383-.062a10 10 0 0 1-8.257-8.257l-.062-.383a.8.8 0 0 0-1.514 0l-.062.383a9.999 9.999 0 0 1-4.627 6.904C12.85 18.878 10.776 19 8.774 19H.024C.547 8.419 9.29 0 20 0Z">
+                    </path>
+                    <path fill="#F06225"
+                        d="M0 21h8.774c2.002 0 4.076.122 5.78 1.172a10.02 10.02 0 0 1 3.274 3.274C18.878 27.15 19 29.224 19 31.226V40H6a6 6 0 0 1-6-6V21ZM40 2a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z">
+                    </path>
+                </svg></a>
+        </div>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <nav class="navbar" id="navbar">
+            <ul class="navbar-nav">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./aboutus.html">Sobre</a></li>
+                <li><a href="./services.html">Serviços</a></li>
+                <li><a href="./index.html#gallery">Galeria</a></li>
+                <li><a href="./contact.html">Contato</a></li>
+                <li><a href="./signup.html">Cadastrar</a></li>
+                <li><a href="./signin.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<section class="services">
-    <h2>Serviços de Manutenção de Computadores</h2>
-    <div class="service-item" data-aos="fade-up">
-        <img src="images/hardware-repair.jpg" alt="Reparo de Hardware">
-        <h3>Reparo de Hardware</h3>
-        <p>Soluções para problemas de hardware, substituição de peças e upgrades de componentes.</p>
-        <p class="service-price">R$ 150,00</p>
-    </div>
-    <div class="service-item" data-aos="fade-up" data-aos-delay="100">
-        <img src="images/virus-removal.jpg" alt="Remoção de Vírus">
-        <h3>Remoção de Vírus</h3>
-        <p>Eliminação de malware, instalação de antivírus e proteção de dados.</p>
-        <p class="service-price">R$ 80,00</p>
-    </div>
-    <div class="service-item" data-aos="fade-up" data-aos-delay="200">
-        <img src="images/software-installation.jpg" alt="Instalação de Software">
-        <h3>Instalação de Software</h3>
-        <p>Instalação e atualização de sistemas operacionais e outros softwares essenciais.</p>
-        <p class="service-price">R$ 50,00</p>
-    </div>
-    <div class="service-item" data-aos="fade-up" data-aos-delay="300">
-        <img src="images/data-recovery.jpg" alt="Recuperação de Dados">
-        <h3>Recuperação de Dados</h3>
-        <p>Recuperação de arquivos perdidos ou excluídos acidentalmente.</p>
-        <p class="service-price">R$ 200,00</p>
-    </div>
-    <div class="service-item" data-aos="fade-up" data-aos-delay="400">
-        <img src="images/maintenance.jpg" alt="Manutenção Preventiva">
-        <h3>Manutenção Preventiva</h3>
-        <p>Limpeza e verificação de componentes para evitar falhas e prolongar a vida útil do equipamento.</p>
-        <p class="service-price">R$ 100,00</p>
-    </div>
-    <div class="service-item" data-aos="fade-up" data-aos-delay="500">
-        <img src="images/network-setup.jpg" alt="Configuração de Rede">
-        <h3>Configuração de Rede</h3>
-        <p>Instalação e configuração de redes locais e Wi-Fi para empresas e residências.</p>
-        <p class="service-price">R$ 150,00</p>
-    </div>
-    <div class="service-item" data-aos="fade-up" data-aos-delay="600">
-        <img src="images/backup.jpg" alt="Backup de Dados">
-        <h3>Backup de Dados</h3>
-        <p>Configuração de backups automáticos para proteção de arquivos importantes.</p>
-        <p class="service-price">R$ 75,00</p>
-    </div>
-    <div class="service-item" data-aos="fade-up" data-aos-delay="700">
-        <img src="images/troubleshooting.jpg" alt="Diagnóstico e Solução de Problemas">
-        <h3>Diagnóstico e Solução de Problemas</h3>
-        <p>Identificação e correção de falhas no sistema e nos componentes de hardware.</p>
-        <p class="service-price">R$ 90,00</p>
-    </div>
-</section>
+    <section class="services">
+        <h2>Serviços de Manutenção de Computadores</h2>
+        <div class="service-item" data-aos="fade-up">
+            <img src="images/hardware-repair.jpg" alt="Reparo de Hardware">
+            <h3>Reparo de Hardware</h3>
+            <p>Soluções para problemas de hardware, substituição de peças e upgrades de componentes.</p>
+            <p class="service-price">R$ 150,00</p>
+        </div>
+        <div class="service-item" data-aos="fade-up" data-aos-delay="100">
+            <img src="images/virus-removal.jpg" alt="Remoção de Vírus">
+            <h3>Remoção de Vírus</h3>
+            <p>Eliminação de malware, instalação de antivírus e proteção de dados.</p>
+            <p class="service-price">R$ 80,00</p>
+        </div>
+        <div class="service-item" data-aos="fade-up" data-aos-delay="200">
+            <img src="images/software-installation.jpg" alt="Instalação de Software">
+            <h3>Instalação de Software</h3>
+            <p>Instalação e atualização de sistemas operacionais e outros softwares essenciais.</p>
+            <p class="service-price">R$ 50,00</p>
+        </div>
+        <div class="service-item" data-aos="fade-up" data-aos-delay="300">
+            <img src="images/data-recovery.jpg" alt="Recuperação de Dados">
+            <h3>Recuperação de Dados</h3>
+            <p>Recuperação de arquivos perdidos ou excluídos acidentalmente.</p>
+            <p class="service-price">R$ 200,00</p>
+        </div>
+        <div class="service-item" data-aos="fade-up" data-aos-delay="400">
+            <img src="images/maintenance.jpg" alt="Manutenção Preventiva">
+            <h3>Manutenção Preventiva</h3>
+            <p>Limpeza e verificação de componentes para evitar falhas e prolongar a vida útil do equipamento.</p>
+            <p class="service-price">R$ 100,00</p>
+        </div>
+        <div class="service-item" data-aos="fade-up" data-aos-delay="500">
+            <img src="images/network-setup.jpg" alt="Configuração de Rede">
+            <h3>Configuração de Rede</h3>
+            <p>Instalação e configuração de redes locais e Wi-Fi para empresas e residências.</p>
+            <p class="service-price">R$ 150,00</p>
+        </div>
+        <div class="service-item" data-aos="fade-up" data-aos-delay="600">
+            <img src="images/backup.jpg" alt="Backup de Dados">
+            <h3>Backup de Dados</h3>
+            <p>Configuração de backups automáticos para proteção de arquivos importantes.</p>
+            <p class="service-price">R$ 75,00</p>
+        </div>
+        <div class="service-item" data-aos="fade-up" data-aos-delay="700">
+            <img src="images/troubleshooting.jpg" alt="Diagnóstico e Solução de Problemas">
+            <h3>Diagnóstico e Solução de Problemas</h3>
+            <p>Identificação e correção de falhas no sistema e nos componentes de hardware.</p>
+            <p class="service-price">R$ 90,00</p>
+        </div>
+    </section>
 
-<footer class="footer">
-    <p>&copy; 2024 TS Computech. Todos os direitos reservados.</p>
-</footer>
+    <footer class="footer">
+        <div class="footer-menu">
+            <a href="./faq.html">Dúvidas Frequentes</a>
+            <a href="./branches.html">Filiais</a>
+        </div>
+        <div class="footer-rigths">
+        <p>&copy; 2024 TS Computech. Todos os direitos reservados.</p>
+        </div>
+    </footer>
 
-<!-- jQuery e Plugin AOS -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-<script>
-    // Inicializar o AOS
-    AOS.init({
-        duration: 800,
-        easing: 'ease-in-out',
-        once: true
-    });
-</script>
+    <!-- jQuery e Plugin AOS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        // Inicializar o AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+    </script>
 
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>
