@@ -24,7 +24,7 @@ body {
     height: 50px;  Ajuste a altura conforme necessário 
 } */
 
-.navbar {
+/* .navbar {
     display: flex;
 }
 
@@ -40,6 +40,60 @@ body {
 .navbar-nav a {
     color: white;
     text-decoration: none;
+} */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.navbar-nav {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+}
+
+.navbar-nav li {
+    margin: 0 15px;
+}
+
+.navbar-nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav a:hover {
+    color: #f06225; /* Cor de destaque ao passar o mouse */
+}
+
+.cart-link {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+}
+
+.cart-icon {
+    width: 25px;
+    height: 25px;
+    margin-right: 5px;
+    color: white;
+}
+
+.cart-count {
+    position: absolute;
+    top: 7px;
+    background-color: #f06225;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+    font-weight: bold;
+    min-width: 20px;
+    text-align: center;
 }
 
 
@@ -1263,6 +1317,20 @@ button.remove:hover {
         display: flex; /* Exibe o menu hambúrguer em telas menores */
     }
 
+    .cart-count {
+        position: absolute;
+        top: 280px;
+        left: 510px;
+        background-color: #f06225;
+        color: white;
+        border-radius: 50%;
+        padding: 2px 6px;
+        font-size: 12px;
+        font-weight: bold;
+        min-width: 20px;
+        text-align: center;
+    }
+
     /* Carrossel */
     .promo-description {
         bottom: 15px;
@@ -1317,6 +1385,8 @@ button.remove:hover {
     /* Menu Hamburguer */
     .navbar.active {
         display: flex; /* Mostra o menu */
+        width: 748px;
+        margin-left: 10px;
     }
 
     .navbar {
@@ -1339,6 +1409,20 @@ button.remove:hover {
 
     .menu-toggle {
         display: flex; /* Exibe o menu hambúrguer em telas menores */
+    }
+
+    .cart-count {
+        position: absolute;
+        top: 280px;
+        left: 380px;
+        background-color: #f06225;
+        color: white;
+        border-radius: 50%;
+        padding: 2px 6px;
+        font-size: 12px;
+        font-weight: bold;
+        min-width: 20px;
+        text-align: center;
     }
 
     /* Carrossel */
@@ -1379,6 +1463,22 @@ button.remove:hover {
 
     .navbar.active {
         display: flex; /* Mostra o menu */
+        width: 460px;
+        margin-left: 10px;
+    }
+
+    .cart-count {
+        position: absolute;
+        top: 280px;
+        left: 240px;
+        background-color: #f06225;
+        color: white;
+        border-radius: 50%;
+        padding: 2px 6px;
+        font-size: 12px;
+        font-weight: bold;
+        min-width: 20px;
+        text-align: center;
     }
 
     /* Carrossel */

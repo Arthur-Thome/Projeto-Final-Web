@@ -40,46 +40,54 @@ document.getElementById('popup').addEventListener('click', function (event) {
 
 // Carrinho
 
-document.addEventListener('DOMContentLoaded', () => {
-    console.log('DOM completamente carregado');
-    
-    const buyButton = document.querySelector('.buy-btn');
-    
-    if (!buyButton) {
-        console.log('Botão não encontrado');
-        return;  // Interrompe o script caso o botão não seja encontrado
+document.addEventListener('DOMContentLoaded', function() {
+    const buyButtons = document.querySelectorAll('.buy-btn');
+    const cartCountElement = document.getElementById('cart-count');
+
+    // Função para atualizar o número de itens no carrinho
+    function updateCartCount() {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+        cartCountElement.textContent = totalItems;
     }
 
-    console.log('Botão encontrado:', buyButton);  // Se o botão for encontrado, este log aparece
+    // Ação ao clicar no botão de compra
+    buyButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const productId = button.getAttribute('data-product-id');
+            const productName = button.getAttribute('data-product-name');
+            const productPrice = parseFloat(button.getAttribute('data-product-price'));
 
-    const productId = buyButton.dataset.productId;
-    const productName = buyButton.dataset.productName;
-    const productPrice = parseFloat(buyButton.dataset.productPrice);
-
-    buyButton.addEventListener('click', () => {
-        let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-        // Verifica se o produto já está no carrinho
-        const existingProduct = cart.find(item => item.id === productId);
-        if (existingProduct) {
-            existingProduct.quantity += 1;
-        } else {
-            cart.push({
+            const product = {
                 id: productId,
                 name: productName,
                 price: productPrice,
-                quantity: 1,
-            });
-        }
+                quantity: 1
+            };
 
-        localStorage.setItem('cart', JSON.stringify(cart));
+            // Recupera o carrinho do localStorage, ou cria um novo se não existir
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-        // Redireciona para o carrinho
-        window.location.href = './cart.html';
+            // Verifica se o produto já existe no carrinho e aumenta a quantidade se necessário
+            const existingProduct = cart.find(item => item.id === product.id);
+            if (existingProduct) {
+                existingProduct.quantity++;
+            } else {
+                cart.push(product);
+            }
+
+            // Atualiza o carrinho no localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            // Atualiza a contagem de itens no carrinho
+            updateCartCount();
+
+            // Redireciona para a página do carrinho
+            window.location.href = './cart.html';
+        });
     });
+
+    // Inicializa a contagem de itens ao carregar a página
+    updateCartCount();
 });
-
-
-
-
 
