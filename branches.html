@@ -43,6 +43,15 @@
         </nav>
     </header>
 
+    <main>
+        <h2>Nosso Local</h2>
+
+        <!-- 4 Contêineres para os Mapas -->
+        <div id="map-sede" style="height: 500px; width: 100%; margin-bottom: 20px;"></div> <!-- Mapa Sede -->
+        <div id="map-filial1" style="height: 500px; width: 100%; margin-bottom: 20px;"></div> <!-- Mapa Filial 1 -->
+        <div id="map-filial2" style="height: 500px; width: 100%; margin-bottom: 20px;"></div> <!-- Mapa Filial 2 -->
+        <div id="map-filial3" style="height: 500px; width: 100%;"></div> <!-- Mapa Filial 3 -->
+    </main>
 
     <footer class="footer">
         <div class="footer-menu">
@@ -50,8 +59,75 @@
             <a href="./branches.html">Filiais</a>
         </div>
         <div class="footer-rigths">
-        <p>&copy; 2024 TS Computech. Todos os direitos reservados.</p>
+            <p>&copy; 2024 TS Computech. Todos os direitos reservados.</p>
         </div>
     </footer>
+
+    <!-- Incluir a API do Google Maps -->
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvZiUd0bIDKYx7mq9VwJp3xzs0S6SH_UI&callback=initMap">
+        </script>
+    <!-- Função initMap -->
+    <script>
+        function initMap() {
+            // Mapa Sede
+            const mapSede = new google.maps.Map(document.getElementById('map-sede'), {
+                center: { lat: -30.0395, lng: -51.2183 }, // Coordenadas da sede
+                zoom: 12,
+            });
+
+            // Mapa Filial 1
+            const mapFilial1 = new google.maps.Map(document.getElementById('map-filial1'), {
+                center: { lat: -30.0546, lng: -51.1884 }, // Coordenadas da Filial 1
+                zoom: 12,
+            });
+
+            // Mapa Filial 2
+            const mapFilial2 = new google.maps.Map(document.getElementById('map-filial2'), {
+                center: { lat: -30.0397, lng: -51.2259 }, // Coordenadas da Filial 2
+                zoom: 12,
+            });
+
+            // Mapa Filial 3
+            const mapFilial3 = new google.maps.Map(document.getElementById('map-filial3'), {
+                center: { lat: -30.1244, lng: -51.2491 }, // Coordenadas da Filial 3
+                zoom: 12,
+            });
+
+            // Adicionando os marcadores para cada mapa
+
+            // Sede
+            const sedeMarker = new google.maps.Marker({
+                position: { lat: -30.0395, lng: -51.2183 },
+                map: mapSede,
+                title: "Sede - TS Computech"
+            });
+
+            // Filial 1
+            const filial1Marker = new google.maps.Marker({
+                position: { lat: -30.0546, lng: -51.1884 },
+                map: mapFilial1,
+                title: "Filial 1 - Adão Baino 177, Cristo Redentor, Porto Alegre"
+            });
+
+            // Filial 2
+            const filial2Marker = new google.maps.Marker({
+                position: { lat: -30.0397, lng: -51.2259 },
+                map: mapFilial2,
+                title: "Filial 2 - Avenida Independência 386, Porto Alegre"
+            });
+
+            // Filial 3 (coordenadas fictícias)
+            const filial3Marker = new google.maps.Marker({
+                position: { lat: -30.1244, lng: -51.2491 },
+                map: mapFilial3,
+                title: "Filial 3"
+            });
+        }
+    </script>
+
+
+
 </body>
+
 </html>

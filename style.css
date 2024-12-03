@@ -1213,6 +1213,12 @@ button.remove:hover {
     background-color: #d24f1e;
 }
 
+/* Mapas */
+#map {
+    height: 400px;
+    width: 100%;
+}
+
 
 
 /* Rodapé */
