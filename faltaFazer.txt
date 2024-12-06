@@ -2,13 +2,13 @@ Arrumar do jeito que o professor falou a página de serviços (em andamento)
 
 Arrumar a pagina dos lugares(Deixar mais bonito) e acertar os lugares
 
-Adicionar o carrinho em todo o site.
+Adicionar o carrinho em todo o site. (FEITO)
 
-retirar o contador
+retirar o contador (FEITO)
 
 Tentar fazer ele incrementar quando adicionado itens no carrinho
 
-Retirar o rodapé dos Formulários(no carrinho tentar fazer sumir quando carrinho estiver vazio, se não remover)
+Retirar o rodapé dos Formulários OK (no carrinho tentar fazer sumir quando carrinho estiver vazio, se não remover)
 
 Verificar se todas as páginas estão com a resposividades corretas
 
