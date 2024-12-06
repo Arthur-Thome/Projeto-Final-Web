@@ -46,15 +46,43 @@
         </nav>
     </header>
 
-    <main>
-        <h2>Nosso Local</h2>
+    <section class="map">
+        <h2>Nossos Locais</h2>
 
         <!-- 4 Contêineres para os Mapas -->
-        <div id="map-sede" style="height: 500px; width: 100%; margin-bottom: 20px;"></div> <!-- Mapa Sede -->
-        <div id="map-filial1" style="height: 500px; width: 100%; margin-bottom: 20px;"></div> <!-- Mapa Filial 1 -->
-        <div id="map-filial2" style="height: 500px; width: 100%; margin-bottom: 20px;"></div> <!-- Mapa Filial 2 -->
-        <div id="map-filial3" style="height: 500px; width: 100%;"></div> <!-- Mapa Filial 3 -->
-    </main>
+        <div class="map-container">
+            <div class="map-details">
+                <p>Venha conhecer nossa sede TS Computech</p>
+                <img src="./images/sede.png" alt="Foto de frente da sede"><br>
+            </div>
+            <div id="map-sede"></div> <!-- Mapa Sede -->
+        </div>
+        <div class="map-container">
+            <div class="map-details">
+                <p>Venha conhecer nossa Filial - TS Computech Logistics</p>
+                <img src="./images/filial1.png" alt="Foto de frente da filial"><br>
+            </div>
+            <div id="map-filial1"></div> <!-- Mapa Filial 1 -->
+        </div>
+        <div class="map-container">
+            <div class="map-details">
+                <p>Venha conhecer nossa Filial - TS Computech NextGen</p>
+                <img src="./images/filial2.png" alt="Foto de frente da filial"><br>
+            </div>
+            <div id="map-filial2"></div> <!-- Mapa Filial 2 -->
+        </div>
+        <div class="map-container">
+            <div class="map-details">
+                <p>Venha conhecer nossa Filial - TS Computech Center</p>
+                <img src="./images/filial3.png" alt="Foto de frente da filial"><br>
+                <a href="./index.html"> Caso não queira ir a loja, compre oline aqui. </a>
+            </div>
+            <div id="map-filial3"></div> <!-- Mapa Filial 3 -->
+        </div>
+        
+        
+        
+    </section>
 
     <footer class="footer">
         <div class="footer-menu">
@@ -75,25 +103,25 @@
         function initMap() {
             // Mapa Sede
             const mapSede = new google.maps.Map(document.getElementById('map-sede'), {
-                center: { lat: -30.0395, lng: -51.2183 }, // Coordenadas da sede
+                center: { lat: -30.03528, lng: -51.22640 }, // Coordenadas do senac porto alegre
                 zoom: 12,
             });
 
             // Mapa Filial 1
             const mapFilial1 = new google.maps.Map(document.getElementById('map-filial1'), {
-                center: { lat: -30.0546, lng: -51.1884 }, // Coordenadas da Filial 1
+                center: { lat: -30.01206, lng: -51.15631 }, // Coordenadas casa do arthur
                 zoom: 12,
             });
 
             // Mapa Filial 2
             const mapFilial2 = new google.maps.Map(document.getElementById('map-filial2'), {
-                center: { lat: -30.0397, lng: -51.2259 }, // Coordenadas da Filial 2
+                center: { lat: -30.02923, lng: -51.21753 }, // Coordenadas da Sulmed
                 zoom: 12,
             });
 
             // Mapa Filial 3
             const mapFilial3 = new google.maps.Map(document.getElementById('map-filial3'), {
-                center: { lat: -30.1244, lng: -51.2491 }, // Coordenadas da Filial 3
+                center: { lat: -30.08625, lng: -51.18172 }, // Coordenadas da Casa do Mayan
                 zoom: 12,
             });
 
@@ -101,28 +129,28 @@
 
             // Sede
             const sedeMarker = new google.maps.Marker({
-                position: { lat: -30.0395, lng: -51.2183 },
+                position: { lat: -30.03528, lng: -51.22640 },
                 map: mapSede,
                 title: "Sede - TS Computech"
             });
 
             // Filial 1
             const filial1Marker = new google.maps.Marker({
-                position: { lat: -30.0546, lng: -51.1884 },
+                position: { lat: -30.01206, lng: -51.15631 },
                 map: mapFilial1,
                 title: "Filial 1 - Adão Baino 177, Cristo Redentor, Porto Alegre"
             });
 
             // Filial 2
             const filial2Marker = new google.maps.Marker({
-                position: { lat: -30.0397, lng: -51.2259 },
+                position: { lat: -30.02923, lng: -51.21753 },
                 map: mapFilial2,
                 title: "Filial 2 - Avenida Independência 386, Porto Alegre"
             });
 
             // Filial 3 (coordenadas fictícias)
             const filial3Marker = new google.maps.Marker({
-                position: { lat: -30.1244, lng: -51.2491 },
+                position: { lat: -30.08625, lng: -51.18172 },
                 map: mapFilial3,
                 title: "Filial 3"
             });

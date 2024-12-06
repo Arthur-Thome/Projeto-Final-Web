@@ -1099,22 +1099,6 @@ input.error:focus {
     transform: scale(1.1);
 }
 
-.cart-counter {
-    position: absolute;
-    top: -5px;
-    right: -10px;
-    background-color: #f06225;
-    color: #fff;
-    font-size: 12px;
-    font-weight: bold;
-    border-radius: 50%;
-    width: 18px;
-    height: 18px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 
 /* Página do Carrinho */
 main {
@@ -1223,10 +1207,70 @@ button.remove:hover {
     background-color: #d24f1e;
 }
 
+
+
 /* Mapas */
-#map {
-    height: 400px;
-    width: 100%;
+
+.map{
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.map h2{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.map-container {
+    display: flex; /* Ativa o Flexbox */
+    gap: 20px; /* Espaçamento entre as divs */
+    align-items: flex-start; /* Alinha as divs no topo */
+    justify-content: space-between; /*Coloca os dois um em cada lado */
+    
+}
+
+.map-details{
+    max-width: 50%;
+    margin: 0 auto;
+}
+
+.map-details p{
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.map-details a{
+    margin: 0 auto;
+}
+
+.map-details img{
+    margin-bottom: 30px;
+    width: 90%;
+}
+
+#map-sede{
+    height: 500px;
+    width: 50%;
+    margin-top: 70px;
+}
+
+#map-filial1{
+    height: 500px;
+    width: 50%;
+    margin-top: 70px;
+}
+
+#map-filial2{
+    height: 500px;
+    width: 50%;
+    margin-top: 70px;
+}
+
+#map-filial3{
+    height: 500px;
+    width: 50%;
+    margin-top: 70px;
 }
 
 
@@ -1333,20 +1377,6 @@ button.remove:hover {
         display: flex; /* Exibe o menu hambúrguer em telas menores */
     }
 
-    .cart-count {
-        position: absolute;
-        top: 280px;
-        left: 510px;
-        background-color: #f06225;
-        color: white;
-        border-radius: 50%;
-        padding: 2px 6px;
-        font-size: 12px;
-        font-weight: bold;
-        min-width: 20px;
-        text-align: center;
-    }
-
     /* Carrossel */
     .promo-description {
         bottom: 15px;
@@ -1425,20 +1455,6 @@ button.remove:hover {
 
     .menu-toggle {
         display: flex; /* Exibe o menu hambúrguer em telas menores */
-    }
-
-    .cart-count {
-        position: absolute;
-        top: 280px;
-        left: 380px;
-        background-color: #f06225;
-        color: white;
-        border-radius: 50%;
-        padding: 2px 6px;
-        font-size: 12px;
-        font-weight: bold;
-        min-width: 20px;
-        text-align: center;
     }
 
     /* Carrossel */
