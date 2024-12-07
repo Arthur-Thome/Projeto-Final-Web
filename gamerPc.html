@@ -46,8 +46,8 @@
                 <li><a href="./signup.html">Cadastrar</a></li>
                 <li><a href="./signin.html">Login</a></li>
                 <li><a href="./cart.html" class="cart-link">
-                    <img src="./images/cart.png" alt="Carrinho" class="cart-icon">
-                </a></li>
+                        <img src="./images/cart.png" alt="Carrinho" class="cart-icon">
+                    </a></li>
             </ul>
         </nav>
     </header>
@@ -91,10 +91,8 @@
                         <img src="./images/cards.png" alt="icone de cartões de crédito" class="btn-icon">
                         Formas de Pagamento
                     </button>
-                    <button class="buy-btn"
-                            data-product-id="1" 
-                            data-product-name="PC Gamer Pichau Highflyer"
-                            data-product-price="30999.96">
+                    <button class="buy-btn" data-product-id="1" data-product-name="PC Gamer Pichau Highflyer"
+                        data-product-price="30999.96">
                         <img src="./images/cart-button.png" alt="icone de carrinho" class="btn-icon">
                         Comprar
                     </button>
@@ -154,7 +152,7 @@
             <a href="./branches.html">Filiais</a>
         </div>
         <div class="footer-rigths">
-        <p>&copy; 2024 TS Computech. Todos os direitos reservados.</p>
+            <p>&copy; 2024 TS Computech. Todos os direitos reservados.</p>
         </div>
     </footer>
 
@@ -179,14 +177,34 @@
                 asNavFor: '.slider-for',
                 dots: false,
                 focusOnSelect: true,
-                centerMode: false
+                centerMode: false,
+                responsive: [
+                    {
+                        breakpoint: 1048,
+                        settings: {
+                            slidesToShow: 3 // Reduz para 3 miniaturas em telas até 1024px
+                        }
+                    },
+                    {
+                        breakpoint: 790,
+                        settings: {
+                            slidesToShow: 2 // Reduz para 2 miniaturas em telas até 768px
+                        }
+                    },
+                    {
+                        breakpoint: 490,
+                        settings: {
+                            slidesToShow: 1 // Apenas 1 miniatura visível em telas até 480px
+                        }
+                    }
+                ]
             });
         });
     </script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const buyButton = document.querySelector('.buy-btn');
-    
+
             buyButton.addEventListener('click', () => {
                 const product = {
                     id: buyButton.getAttribute('data-product-id'),
@@ -194,9 +212,9 @@
                     price: parseFloat(buyButton.getAttribute('data-product-price')),
                     quantity: 1,
                 };
-    
+
                 let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    
+
                 // Verificar se o produto já existe no carrinho
                 const existingProduct = cart.find(item => item.id === product.id);
                 if (existingProduct) {
@@ -204,10 +222,10 @@
                 } else {
                     cart.push(product);  // Adiciona o produto
                 }
-    
+
                 // Atualiza o carrinho no localStorage
                 localStorage.setItem('cart', JSON.stringify(cart));
-    
+
                 // Redireciona para a página do carrinho
                 window.location.href = './cart.html';
             });

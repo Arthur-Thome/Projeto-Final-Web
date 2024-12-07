@@ -1,17 +1,3 @@
-Arrumar do jeito que o professor falou a página de serviços (em andamento)
-
-Arrumar a pagina dos lugares(Deixar mais bonito) e acertar os lugares (FEITO)
-
-Adicionar o carrinho em todo o site. (FEITO)
-
-retirar o contador (FEITO)
-
-Tentar fazer ele incrementar quando adicionado itens no carrinho (Cancelado)
-
-Retirar o rodapé dos Formulários OK (no carrinho tentar fazer sumir quando carrinho estiver vazio, se não remover)
-
-Verificar se todas as páginas estão com a resposividades corretas
-
 Fazer a pagina de formas de pagamento?? Fazer parecido com o da pichau, que é um popup (https://www.pichau.com.br/computador-pichau-highflyer-intel-i9-14900kf-geforce-rtx-4090-24gb-64gb-ddr5-2x-ssd-m-2-2tb-49341 CLICAR EM "FORMAS DE PAGAMENTO")
 
 
