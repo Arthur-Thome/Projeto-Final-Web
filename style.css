@@ -1352,6 +1352,8 @@ button.remove:hover {
 
 .map-details a {
     margin: 0 auto;
+    text-decoration: none;
+    color: #181717;
 }
 
 .map-details img {
