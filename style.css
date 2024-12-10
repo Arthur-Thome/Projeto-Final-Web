@@ -1586,6 +1586,22 @@ button.remove:hover {
     }
 }
 
+@media (max-width: 950px){
+    .gallery-item {
+        width: 45%;
+        /* Aumenta o tamanho em telas menores */
+        margin: 10px 0;
+    }
+
+    .gallery img {
+        width: 100px;
+        /* Reduz o tamanho das imagens na galeria */
+        margin: 5px;
+        /* Ajusta a margem das imagens */
+    }
+
+}
+
 
 
 /* Media Query para Dispositivos Móveis (até 768px) */
