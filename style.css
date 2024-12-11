@@ -1318,9 +1318,8 @@ button.remove:hover {
 /* Mapas */
 
 .map {
-    width: 70%;
-    margin: 0 auto;
-    margin-top: 10px;
+    padding: 20px;
+    text-align: center;
 }
 
 .map h2 {
@@ -1330,19 +1329,14 @@ button.remove:hover {
 
 .map-container {
     display: flex;
-    /* Ativa o Flexbox */
-    gap: 20px;
-    /* Espaçamento entre as divs */
-    align-items: flex-start;
-    /* Alinha as divs no topo */
+    align-items: center;
     justify-content: space-between;
-    /*Coloca os dois um em cada lado */
-
+    margin: 20px 0;
 }
 
 .map-details {
-    max-width: 50%;
-    margin: 0 auto;
+    max-width: 40%;
+    text-align: left;
 }
 
 .map-details p {
@@ -1357,8 +1351,17 @@ button.remove:hover {
 }
 
 .map-details img {
-    margin-bottom: 30px;
-    width: 90%;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 10px 0;
+}
+
+.map-area {
+    width: 55%;
+    height: 300px;
+    background-color: #f0f0f0; /* Fundo placeholder */
+    border-radius: 8px;
 }
 
 #map-sede {
@@ -1593,6 +1596,27 @@ button.remove:hover {
     .aboutDescription{
         max-width: 80%;
     }
+
+    /* Mapas */
+    .map-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .map-details {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .map-details img{
+        margin-left: 25%;
+        width: 500px;
+        height: 500px;
+    }
+
+    .map-sede{
+        width: 8000px;
+    }
 }
 
 @media (max-width: 950px){
@@ -1753,6 +1777,25 @@ button.remove:hover {
     .banner{
         text-align: center;
     }
+
+    /* Mapas */
+    .map-container {
+        flex-direction: column;
+    }
+
+    .map-details {
+        margin-bottom: 20px;
+    }
+
+    .map-area {
+        height: 300px;
+    }
+
+    .map-details img{
+        margin-left: 17%;
+        width: 500px;
+        height: 500px;
+    }
 }
 
 @media (max-width: 640px){
@@ -1873,6 +1916,22 @@ button.remove:hover {
     }
     .footer-menu a {
         display: block;
+    }
+
+    /* Mapas */
+
+    .map-details {
+        text-align: center;
+    }
+
+    .map-area {
+        height: 480px;
+    }
+
+    .map-details img{
+        margin: 0 auto;
+        width: 500px;
+        height: 500px;
     }
 }
 
