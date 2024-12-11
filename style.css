@@ -877,7 +877,7 @@ input.error:focus {
     font-size: 16px;
     margin-bottom: 40px;
     text-align: justify;
-    max-width: 50%;
+    max-width:90%;
     margin: 0 auto;
 }
 
@@ -904,7 +904,6 @@ input.error:focus {
 
 .member-photo img {
     width: 100%;
-    height: 350px;
     border-radius: 50%;
     margin-bottom: 15px;
 }
@@ -942,8 +941,10 @@ input.error:focus {
 .logo-linkedin,
 .logo-facebook,
 .logo-instagram,
-.logo-gihub {
+.logo-github {
     transition: color 0.2s;
+    width: 24px;
+    height: 24px;
 }
 
 .social-nav li a:visited,
@@ -961,7 +962,6 @@ input.error:focus {
 .social-nav {
     display: flex;
     justify-content: center;
-
 }
 
 .socialmedia-arthur {
@@ -1584,6 +1584,15 @@ button.remove:hover {
     .product-detail{
         margin: 10px;
     }
+
+    .slider-for-keyboard img{
+        width: 80%;
+        height: 80%;
+    }
+
+    .aboutDescription{
+        max-width: 80%;
+    }
 }
 
 @media (max-width: 950px){
@@ -1598,6 +1607,10 @@ button.remove:hover {
         /* Reduz o tamanho das imagens na galeria */
         margin: 5px;
         /* Ajusta a margem das imagens */
+    }
+
+    .aboutDescription{
+        max-width: 80%;
     }
 
 }
@@ -1740,8 +1753,33 @@ button.remove:hover {
     .banner{
         text-align: center;
     }
+}
 
+@media (max-width: 640px){
+    .buttons-container button{
+        width: 150px;
+        height: 80px;
+    }
 
+}
+
+@media (max-width: 690px) {
+    .product-container {
+        display: flex;
+        flex-direction: column; /* Torna as divs empilhadas */
+        align-items: center;   /* Centraliza os itens */
+    }
+    .product-slider, .product-info {
+        width: 100%; /* Faz com que cada div ocupe toda a largura */
+        margin: 10px 0; /* Adiciona espaçamento entre as divs */
+    }
+    .product-info {
+        padding: 0 10px; /* Adiciona espaçamento interno para textos */
+    }
+
+    .slider-for-keyboard img{
+        margin-left: 35px; ;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1811,11 +1849,40 @@ button.remove:hover {
     .aboutDescription{
         max-width: 90%;
     }
+
+    /*Página do produto*/
+    .slider-for, .slider-nav {
+        width: 100%;
+    }
+    .product-info h1 {
+        font-size: 16px;
+        text-align: center;
+    }
+    .buttons-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* Footer */
+    .footer {
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-menu {
+        margin-bottom: 10px;
+    }
+    .footer-menu a {
+        display: block;
+    }
 }
 
 @media (min-width: 3000px) {
     .glide {
         max-width: 2000px;
         /* Máxima largura do carrossel */
+    }
+
+    .aboutDescription{
+        max-width: 80%;
     }
 }
