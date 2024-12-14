@@ -755,104 +755,73 @@ input.error:focus {
 }
 
 /* Serviços */
+/* Estilização dos cards */
 .services {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Sempre 4 colunas lado a lado */
+    gap: 20px; /* Espaçamento entre os cards */
     padding: 20px;
 }
 
+/* Estilização de cada card */
 .service-item {
-    display: flex;
-    /* Alinha o conteúdo em linha */
-    flex-wrap: wrap;
-    /* Permite ajuste para telas menores */
-    align-items: center;
-    /* Centraliza verticalmente */
-    background-color: #fff;
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
     border-radius: 8px;
+    padding: 20px;
+    text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    flex: 1 1 calc(25% - 20px);
-    /* Tamanho padrão: 2 por linha */
-    max-width: calc(25% - 20px);
-    text-align: left;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .service-item:hover {
-    transform: translateY(-10px);
-    /* Efeito ao passar o mouse */
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
-.service-item img {
-    width: 40%;
-    /* Ocupa 40% da largura da div */
-    height: auto;
-    border-radius: 8px 0 0 8px;
-    /* Bordas arredondadas apenas à esquerda */
-}
-
-.service-details {
-    padding: 10px;
-    width: 60%;
-    /* Descrição ocupa 60% */
-    display: flex;
-    flex-direction: column;
-}
-
-.service-details h3 {
-    font-size: 18px;
+/* Título no topo do card */
+.service-item h3 {
+    font-size: 25px;
+    color: #333;
     margin-bottom: 10px;
-    color: #f06225;
 }
 
+/* Imagem logo abaixo do título */
+.service-item img {
+    width: 400px; /* Largura ajustável ao container */
+    height: 180px; /* Altura fixa */
+    /* object-fit: cover; Ajusta a imagem para cobrir o espaço sem distorcer */
+    margin-bottom: 15px;
+}
+
+/* Estilização dos detalhes de serviço */
 .service-details ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Permitir quebra em telas menores */
     list-style: none;
     padding: 0;
     margin: 0;
+    gap: 10px;
 }
 
+/* Itens da lista lado a lado */
 .service-details ul li {
     display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.service-details ul li strong {
-    color: #333;
-}
-
-/* Estilo do conteúdo */
-.service-details {
-    flex: 1;
-    /* Ocupar o restante da largura */
-    padding: 20px;
-}
-
-.service-details h3 {
-    text-align: center;
-    /* Centraliza o título */
-    margin-bottom: 10px;
-    font-size: 1.5rem;
-    color: #333;
-}
-
-.service-details ul li {
     flex-direction: column;
-    /* Alinha os itens verticalmente */
-    justify-content: space-around;
-    /* Alinha o texto à esquerda */
+    align-items: center;
+    justify-content: space-between;
+    font-size: 16px;
+    color: #555;
 }
 
+/* Span logo abaixo de cada item */
 .service-details ul li span {
     display: block;
-    /* Faz o span ocupar toda a largura */
     margin-top: 5px;
-    /* Espaço entre o texto e o preço */
+    font-size: 0.85em;
     font-weight: bold;
-    /* Destaca o preço */
+    color: #f06225;
 }
 
 
@@ -877,7 +846,7 @@ input.error:focus {
     font-size: 16px;
     margin-bottom: 40px;
     text-align: justify;
-    max-width:90%;
+    max-width: 50%;
     margin: 0 auto;
 }
 
@@ -904,6 +873,7 @@ input.error:focus {
 
 .member-photo img {
     width: 100%;
+    height: 350px;
     border-radius: 50%;
     margin-bottom: 15px;
 }
@@ -941,10 +911,8 @@ input.error:focus {
 .logo-linkedin,
 .logo-facebook,
 .logo-instagram,
-.logo-github {
+.logo-gihub {
     transition: color 0.2s;
-    width: 24px;
-    height: 24px;
 }
 
 .social-nav li a:visited,
@@ -962,6 +930,7 @@ input.error:focus {
 .social-nav {
     display: flex;
     justify-content: center;
+
 }
 
 .socialmedia-arthur {
@@ -1318,8 +1287,9 @@ button.remove:hover {
 /* Mapas */
 
 .map {
-    padding: 20px;
-    text-align: center;
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 10px;
 }
 
 .map h2 {
@@ -1329,14 +1299,19 @@ button.remove:hover {
 
 .map-container {
     display: flex;
-    align-items: center;
+    /* Ativa o Flexbox */
+    gap: 20px;
+    /* Espaçamento entre as divs */
+    align-items: flex-start;
+    /* Alinha as divs no topo */
     justify-content: space-between;
-    margin: 20px 0;
+    /*Coloca os dois um em cada lado */
+
 }
 
 .map-details {
-    max-width: 40%;
-    text-align: left;
+    max-width: 50%;
+    margin: 0 auto;
 }
 
 .map-details p {
@@ -1351,17 +1326,8 @@ button.remove:hover {
 }
 
 .map-details img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin: 10px 0;
-}
-
-.map-area {
-    width: 55%;
-    height: 300px;
-    background-color: #f0f0f0; /* Fundo placeholder */
-    border-radius: 8px;
+    margin-bottom: 30px;
+    width: 90%;
 }
 
 #map-sede {
@@ -1450,8 +1416,14 @@ button.remove:hover {
     /* Cor de destaque ao passar o mouse */
 }
 
+/* Médias query*/
+@media (max-width: 1300px){
+    .services {
+        grid-template-columns: repeat(3, 1fr); /* 3 colunas em telas médias */
+    }
+}
 
-/* Media Query para Tablets (768px a 1024px) */
+
 @media (max-width: 1024px) {
     section {
         padding: 40px 0;
@@ -1535,108 +1507,22 @@ button.remove:hover {
     }
 
     /* Serviços */
-    .service-item {
-        flex: 1 1 calc(33.33% - 20px);
-        /* 3 por linha */
-        max-width: calc(33.33% - 20px);
-    }
-
-    /* Últimos dois itens ocupam toda a largura */
-    .service-item:nth-last-child(-n+2) {
-        flex: 1 1 calc(50% - 10px);
-        /* Duas últimas ocupam lado a lado */
-        max-width: calc(50% - 10px);
-    }
-
-    .service-item img {
-        width: 30%;
-        /* Ajusta a largura da imagem */
-        border-radius: 8px 0 0 8px;
-    }
-
-    .service-details {
-        text-align: center;
-        /* Centraliza o texto */
-    }
-
-    .service-details ul li {
-        flex-direction: column;
-        /* Alinha os itens verticalmente */
-        align-items: flex-start;
-        /* Alinha o texto à esquerda */
-    }
-
-    .service-details ul li span {
-        display: block;
-        /* Faz o span ocupar toda a largura */
-        margin-top: 5px;
-        /* Espaço entre o texto e o preço */
-        font-weight: bold;
-        /* Destaca o preço */
+    .services {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas em tablets */
     }
 
     /* Formulário de cadastro*/
-    #register{
+    #register {
         margin: 15px;
     }
 
-    #registerForm .logo{
+    #registerForm .logo {
         margin-left: 15px;
     }
 
-    .product-detail{
+    .product-detail {
         margin: 10px;
     }
-
-    .slider-for-keyboard img{
-        width: 80%;
-        height: 80%;
-    }
-
-    .aboutDescription{
-        max-width: 80%;
-    }
-
-    /* Mapas */
-    .map-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .map-details {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .map-details img{
-        margin-left: 25%;
-        width: 500px;
-        height: 500px;
-    }
-
-    .map-sede{
-        width: 8000px;
-    }
-}
-
-@media (max-width: 950px){
-    .gallery-item {
-        width: 45%;
-        /* Aumenta o tamanho em telas menores */
-        margin: 10px 0;
-    }
-
-    .gallery img {
-        width: 100px;
-        /* Reduz o tamanho das imagens na galeria */
-        margin: 5px;
-        /* Ajusta a margem das imagens */
-    }
-
-    .aboutDescription{
-        max-width: 80%;
-    }
-
 }
 
 
@@ -1750,79 +1636,16 @@ button.remove:hover {
     }
 
     /* Serviços */
-    .service-item {
-        flex: 1 1 calc(50% - 20px);
-        /* 2 por linha */
-        max-width: calc(50% - 20px);
-    }
-
-    .service-details ul li {
-        flex-direction: column;
-        /* Alinha os itens verticalmente */
-        align-items: center;
-        /* Centraliza o texto e o preço */
-        text-align: center;
-    }
-
-    .service-details ul li span {
-        display: block;
-        /* Faz o span ocupar toda a largura */
-        margin-top: 5px;
-        /* Espaço entre o texto e o preço */
-        font-weight: bold;
-        /* Destaca o preço */
+    .services {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas em tablets */
     }
 
     /* banner */
-    .banner{
+    .banner {
         text-align: center;
     }
 
-    /* Mapas */
-    .map-container {
-        flex-direction: column;
-    }
 
-    .map-details {
-        margin-bottom: 20px;
-    }
-
-    .map-area {
-        height: 300px;
-    }
-
-    .map-details img{
-        margin-left: 17%;
-        width: 500px;
-        height: 500px;
-    }
-}
-
-@media (max-width: 640px){
-    .buttons-container button{
-        width: 150px;
-        height: 80px;
-    }
-
-}
-
-@media (max-width: 690px) {
-    .product-container {
-        display: flex;
-        flex-direction: column; /* Torna as divs empilhadas */
-        align-items: center;   /* Centraliza os itens */
-    }
-    .product-slider, .product-info {
-        width: 100%; /* Faz com que cada div ocupe toda a largura */
-        margin: 10px 0; /* Adiciona espaçamento entre as divs */
-    }
-    .product-info {
-        padding: 0 10px; /* Adiciona espaçamento interno para textos */
-    }
-
-    .slider-for-keyboard img{
-        margin-left: 35px; ;
-    }
 }
 
 @media (max-width: 480px) {
@@ -1871,67 +1694,17 @@ button.remove:hover {
 
     /* Serviços */
     .services {
-        display: flex;
-        flex-wrap: wrap; /* Permite quebra de linha */
-        gap: 20px; /* Espaço entre os itens */
+        grid-template-columns: 1fr; /* 1 coluna em celulares */
     }
 
-    .service-item {
-        flex: 1 1 100%; /* Cada item ocupa 100% da largura */
-        max-width: 100%;
-    }
-
-    /* Últimas duas divs empilhadas */
-    .service-item:nth-last-child(2),
-    .service-item:nth-last-child(1) {
-        flex-basis: 100%; /* Ocupa 100% da largura */
-        max-width: 100%; /* Garante largura total */
+    .service-item img{
+        width: 300px;
+        height: auto;
     }
 
     /* Sobre nós*/
-    .aboutDescription{
+    .aboutDescription {
         max-width: 90%;
-    }
-
-    /*Página do produto*/
-    .slider-for, .slider-nav {
-        width: 100%;
-    }
-    .product-info h1 {
-        font-size: 16px;
-        text-align: center;
-    }
-    .buttons-container {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    /* Footer */
-    .footer {
-        flex-direction: column;
-        text-align: center;
-    }
-    .footer-menu {
-        margin-bottom: 10px;
-    }
-    .footer-menu a {
-        display: block;
-    }
-
-    /* Mapas */
-
-    .map-details {
-        text-align: center;
-    }
-
-    .map-area {
-        height: 480px;
-    }
-
-    .map-details img{
-        margin: 0 auto;
-        width: 500px;
-        height: 500px;
     }
 }
 
@@ -1939,9 +1712,5 @@ button.remove:hover {
     .glide {
         max-width: 2000px;
         /* Máxima largura do carrossel */
-    }
-
-    .aboutDescription{
-        max-width: 80%;
     }
 }
