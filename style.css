@@ -788,8 +788,8 @@ input.error:focus {
 
 /* Imagem logo abaixo do título */
 .service-item img {
-    width: 400px; /* Largura ajustável ao container */
-    height: 180px; /* Altura fixa */
+    width: 200px; /* Largura ajustável ao container */
+    height: 120px; /* Altura fixa */
     /* object-fit: cover; Ajusta a imagem para cobrir o espaço sem distorcer */
     margin-bottom: 15px;
 }
@@ -846,7 +846,7 @@ input.error:focus {
     font-size: 16px;
     margin-bottom: 40px;
     text-align: justify;
-    max-width: 50%;
+    max-width:90%;
     margin: 0 auto;
 }
 
@@ -873,7 +873,6 @@ input.error:focus {
 
 .member-photo img {
     width: 100%;
-    height: 350px;
     border-radius: 50%;
     margin-bottom: 15px;
 }
@@ -911,8 +910,10 @@ input.error:focus {
 .logo-linkedin,
 .logo-facebook,
 .logo-instagram,
-.logo-gihub {
+.logo-github {
     transition: color 0.2s;
+    width: 24px;
+    height: 24px;
 }
 
 .social-nav li a:visited,
@@ -930,7 +931,6 @@ input.error:focus {
 .social-nav {
     display: flex;
     justify-content: center;
-
 }
 
 .socialmedia-arthur {
@@ -1287,9 +1287,8 @@ button.remove:hover {
 /* Mapas */
 
 .map {
-    width: 70%;
-    margin: 0 auto;
-    margin-top: 10px;
+    padding: 20px;
+    text-align: center;
 }
 
 .map h2 {
@@ -1299,19 +1298,14 @@ button.remove:hover {
 
 .map-container {
     display: flex;
-    /* Ativa o Flexbox */
-    gap: 20px;
-    /* Espaçamento entre as divs */
-    align-items: flex-start;
-    /* Alinha as divs no topo */
+    align-items: center;
     justify-content: space-between;
-    /*Coloca os dois um em cada lado */
-
+    margin: 20px 0;
 }
 
 .map-details {
-    max-width: 50%;
-    margin: 0 auto;
+    max-width: 40%;
+    text-align: left;
 }
 
 .map-details p {
@@ -1326,8 +1320,17 @@ button.remove:hover {
 }
 
 .map-details img {
-    margin-bottom: 30px;
-    width: 90%;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 10px 0;
+}
+
+.map-area {
+    width: 55%;
+    height: 300px;
+    background-color: #f0f0f0; /* Fundo placeholder */
+    border-radius: 8px;
 }
 
 #map-sede {
@@ -1416,7 +1419,6 @@ button.remove:hover {
     /* Cor de destaque ao passar o mouse */
 }
 
-/* Médias query*/
 @media (max-width: 1300px){
     .services {
         grid-template-columns: repeat(3, 1fr); /* 3 colunas em telas médias */
@@ -1424,6 +1426,7 @@ button.remove:hover {
 }
 
 
+/* Media Query para Tablets (768px a 1024px) */
 @media (max-width: 1024px) {
     section {
         padding: 40px 0;
@@ -1512,17 +1515,67 @@ button.remove:hover {
     }
 
     /* Formulário de cadastro*/
-    #register {
+    #register{
         margin: 15px;
     }
 
-    #registerForm .logo {
+    #registerForm .logo{
         margin-left: 15px;
     }
 
-    .product-detail {
+    .product-detail{
         margin: 10px;
     }
+
+    .slider-for-keyboard img{
+        width: 80%;
+        height: 80%;
+    }
+
+    .aboutDescription{
+        max-width: 80%;
+    }
+
+    /* Mapas */
+    .map-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .map-details {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .map-details img{
+        margin-left: 25%;
+        width: 500px;
+        height: 500px;
+    }
+
+    .map-sede{
+        width: 8000px;
+    }
+}
+
+@media (max-width: 950px){
+    .gallery-item {
+        width: 45%;
+        /* Aumenta o tamanho em telas menores */
+        margin: 10px 0;
+    }
+
+    .gallery img {
+        width: 100px;
+        /* Reduz o tamanho das imagens na galeria */
+        margin: 5px;
+        /* Ajusta a margem das imagens */
+    }
+
+    .aboutDescription{
+        max-width: 80%;
+    }
+
 }
 
 
@@ -1641,11 +1694,54 @@ button.remove:hover {
     }
 
     /* banner */
-    .banner {
+    .banner{
         text-align: center;
     }
 
+    /* Mapas */
+    .map-container {
+        flex-direction: column;
+    }
 
+    .map-details {
+        margin-bottom: 20px;
+    }
+
+    .map-area {
+        height: 300px;
+    }
+
+    .map-details img{
+        width: 500px;
+        height: 500px;
+    }
+}
+
+@media (max-width: 640px){
+    .buttons-container button{
+        width: 150px;
+        height: 80px;
+    }
+
+}
+
+@media (max-width: 690px) {
+    .product-container {
+        display: flex;
+        flex-direction: column; /* Torna as divs empilhadas */
+        align-items: center;   /* Centraliza os itens */
+    }
+    .product-slider, .product-info {
+        width: 100%; /* Faz com que cada div ocupe toda a largura */
+        margin: 10px 0; /* Adiciona espaçamento entre as divs */
+    }
+    .product-info {
+        padding: 0 10px; /* Adiciona espaçamento interno para textos */
+    }
+
+    .slider-for-keyboard img{
+        margin-left: 35px; ;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1703,8 +1799,49 @@ button.remove:hover {
     }
 
     /* Sobre nós*/
-    .aboutDescription {
+    .aboutDescription{
         max-width: 90%;
+    }
+
+    /*Página do produto*/
+    .slider-for, .slider-nav {
+        width: 100%;
+    }
+    .product-info h1 {
+        font-size: 16px;
+        text-align: center;
+    }
+    .buttons-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* Footer */
+    .footer {
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-menu {
+        margin-bottom: 10px;
+    }
+    .footer-menu a {
+        display: block;
+    }
+
+    /* Mapas */
+
+    .map-details {
+        text-align: center;
+    }
+
+    .map-area {
+        height: 480px;
+    }
+
+    .map-details img{
+        margin: 0 auto;
+        width: 500px;
+        height: 500px;
     }
 }
 
@@ -1712,5 +1849,9 @@ button.remove:hover {
     .glide {
         max-width: 2000px;
         /* Máxima largura do carrossel */
+    }
+
+    .aboutDescription{
+        max-width: 80%;
     }
 }
