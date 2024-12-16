@@ -1559,6 +1559,8 @@ button.remove:hover {
 }
 
 @media (max-width: 950px){
+
+    /* Galeria - Index*/
     .gallery-item {
         width: 45%;
         /* Aumenta o tamanho em telas menores */
@@ -1572,31 +1574,52 @@ button.remove:hover {
         /* Ajusta a margem das imagens */
     }
 
+    /* Sobre nós */
     .aboutDescription{
         max-width: 80%;
     }
 
+    .infotech-image {
+        display: flex;
+        flex-direction: column;
+        /* Alinha as imagens em coluna */
+        align-items: center;
+        gap: 20px;
+        /* Espaçamento entre as imagens */
+    }
+
+}
+
+@media (max-width: 925px) {
+    .map-details img{
+        width: 450px;
+        height: 450px;
+    }
 }
 
 
 
 /* Media Query para Dispositivos Móveis (até 768px) */
 @media (max-width: 768px) {
+    /* Corpo do site */
     body {
         padding: 0 10px;
         /* Adiciona espaçamento nas laterais */
     }
-
+    
+    /* Todas as sections */
     section {
         padding: 30px 0;
         /* Reduz o padding das seções */
     }
 
+    /* Menu */
     .navbar-nav {
         flex-direction: column;
         /* Itens do menu em coluna */
     }
 
+    /* Galeria */
     .gallery {
         justify-content: center;
         /* Centraliza a galeria */
@@ -1614,7 +1637,8 @@ button.remove:hover {
         margin: 5px;
         /* Ajusta a margem das imagens */
     }
-
+    
+    /* Formulários */
     form {
         margin-top: 20px;
         /* Adiciona margem ao formulário */
@@ -1674,6 +1698,7 @@ button.remove:hover {
         padding: 15px;
     }
 
+    /* Carrinho */
     #cart-table th,
     #cart-table td {
         padding: 10px;
@@ -1715,14 +1740,23 @@ button.remove:hover {
         width: 500px;
         height: 500px;
     }
+
+    /* Página do computador */
+    .infotech-image {
+        display: flex;
+        flex-direction: column;
+        /* Alinha as imagens em coluna */
+        align-items: center;
+        gap: 33px;
+        /* Espaçamento entre as imagens */
+    }
 }
 
-@media (max-width: 640px){
-    .buttons-container button{
-        width: 150px;
-        height: 80px;
+@media (max-width: 700px) {
+    .map-details img{
+        width: 300px;
+        height: 300px;
     }
-
 }
 
 @media (max-width: 690px) {
@@ -1741,6 +1775,53 @@ button.remove:hover {
 
     .slider-for-keyboard img{
         margin-left: 35px; ;
+    }
+
+    .map-details img{
+        width: 350px;
+        height: 350px;
+    }
+}
+
+@media (max-width: 640px){
+    .buttons-container button{
+        width: 150px;
+        height: 80px;
+    }
+
+}
+
+
+
+@media (max-width: 550px){
+    .services {
+        grid-template-columns: 1fr; /* 1 coluna em celulares */
+    }
+
+    .service-item img{
+        width: 300px;
+        height: auto;
+    }
+
+    .navbar.active {
+        display: flex;
+        /* Mostra o menu */
+        width: 530px;
+        margin-left: 10px;
+    }
+
+    .infotech-image {
+        display: flex;
+        flex-direction: column;
+        /* Alinha as imagens em coluna */
+        align-items: center;
+        gap: 45px;
+        /* Espaçamento entre as imagens */
+    }
+
+    .map-details img{
+        width: 250px;
+        height: 250px;
     }
 }
 
@@ -1842,6 +1923,20 @@ button.remove:hover {
         margin: 0 auto;
         width: 500px;
         height: 500px;
+    }
+
+    .infotech-image {
+        display: flex;
+        flex-direction: column;
+        /* Alinha as imagens em coluna */
+        align-items: center;
+        gap: 50px;
+        /* Espaçamento entre as imagens */
+    }
+
+    .map-details img{
+        width: 250px;
+        height: 250px;
     }
 }
 
